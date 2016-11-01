@@ -4,6 +4,26 @@
 
 #見た目
 
+{'say:duration:elapsed:from':0, 
+ 'say':0, 
+ 'think:duration:elapsed:from':0, 
+ 'think':0, 
+ 'show':0, 
+ 'hide':0, 
+ 'lookLike':0, 
+ 'nextCostume':0, 
+ 'startScene':0, 
+ 'changeGraphicEffect:by':0,
+ 'setGraphicEffect:to':0,
+ 'filterReset':0,
+ 'changeSizeBy':0,
+ '':0,
+ '':0,
+ '':0,
+ '':0,
+ '':0,
+ 
+ 
 #音
 
 #ペン

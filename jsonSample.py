@@ -1,5 +1,5 @@
 import json
-x = "neko.json"
+x = "crabsam.json"
 f = open(x,'r')
 data = json.load(f)
 y = data["children"]
@@ -40,4 +40,4 @@ def getFirst(L, dict):
 printFirst(t)
 dictOne = {}
 getFirst(t, dictOne)
-print dictOne/Users/Shiomi
+print dictOne

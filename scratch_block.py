@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #動き
-{
+block = {
     'forward:':0,
     'turnRight':0,
     'turnLeft':0,
@@ -141,3 +141,7 @@
     'rounded':0,
     'computeFunction:of':0
 }
+
+block2 = sorted(block)
+print block2
+

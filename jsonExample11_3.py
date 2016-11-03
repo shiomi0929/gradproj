@@ -31,9 +31,7 @@ def getFirst(L, dict):
             else:
                 dict[first] = 1
         for e in L:
-            getFirst(e,dict) ##  map を使ってもできる
-           
-          
+            getFirst(e,dict) 
                                             
 
 #printFirst(s)

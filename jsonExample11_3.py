@@ -2,13 +2,12 @@
 
 import json
 import scratch_block
-# scratch_block.block
-#x = "project.json"
-#f = open(x,'r')
-#data = json.load(f)
-#y = data["children"]
-#s = y[0][u'scripts']
-#print s
+x = "project.json"
+f = open(x,'r')
+data = json.load(f)
+y = data["children"]
+s = y[0][u'scripts']
+print s
 
 
 def printFirst(L):
@@ -36,10 +35,7 @@ def getFirst(L, dict):
            
           
                                             
-jsonE = [[20, 63, [["whenGreenFlag"], ["doForever", [["forward:", 10], ["bounceOffEdge"]]]]],
-         [38, 206, [["whenClicked"], ["say:duration:elapsed:from:", "Hello!", 2]]],
-         [38, 206, [["whenClicked"], ["say:duration:elapsed:from:", "Hello!", 2]]]
-         ]
+
 #printFirst(s)
 
 
@@ -47,7 +43,7 @@ jsonE = [[20, 63, [["whenGreenFlag"], ["doForever", [["forward:", 10], ["bounceO
 #dictOne = open(x,'r')
 #dictOne = json.load(f)
 #dictOne = {}
-getFirst(jsonE,scratch_block.block)
+getFirst(s,scratch_block.block)
 result = scratch_block.block
 print sorted(result.items(), reverse = True, key = lambda x: x[1])
 

@@ -40,7 +40,7 @@ def getFirst(L, dict):
         for e in L:
             getFirst(e,dict) 
 
-            getFirst(s,scratch_block.block)
+getFirst(s,scratch_block.block)
                                             
 
 #printFirst(s)

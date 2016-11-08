@@ -46,12 +46,14 @@ def getFirst(L, dict):
         for e in L:
             getFirst(e,dict)
 
-getFirst(s1,scratch_block.block)
-x = scratch_block.block
+x = {}
+getFirst(s1,x)
+#x = scratch_block.block
 #print result.values()
 
-getFirst(s2,scratch_block.block)
-y = scratch_block.block
+y = {}
+getFirst(s2,y)
+#y = scratch_block.block
 #print result.values()
 #result_s = sorted(result.items(), reverse = True, key = lambda x: x[1])
 #print result_s

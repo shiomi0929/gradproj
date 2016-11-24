@@ -143,5 +143,5 @@ block = {
 }
 
 block2 = sorted(block)
-print block2
+#print block2
 

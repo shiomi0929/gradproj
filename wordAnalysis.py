@@ -28,7 +28,7 @@ print '----'
 print s2
 
 def printFirst(L):
-    if isinstance(L, list):
+    if isinstance(L, list)and len(L)>0 :
         first = L[0]
         if isinstance(first, unicode):
             for e in L:
@@ -41,7 +41,7 @@ def printFirst(L):
             getFirst(e,dict)
 
 def getFirst(L, dict):
-    if isinstance(L, list):
+    if isinstance(L, list)and len(L)>0 :
         first = L[0]
         if isinstance(first,unicode):
             if "turnRight:" in first:
@@ -53,8 +53,8 @@ def getFirst(L, dict):
                         
             if first in dict:
                 dict[first] += 1
-            else:
-                dict[first] = 1
+                #else:
+                #dict[first] = 1
         for e in L:
             getFirst(e,dict)
 

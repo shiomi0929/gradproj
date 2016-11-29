@@ -10,20 +10,22 @@ import urllib2
 #プログラムの読み込み
 #scratchIDの入力
 #プログラムA
-input = raw_input() 
-url = 'http://projects.scratch.mit.edu/internalapi/project/'+input+'/get/'
-r = urllib2.urlopen(url)
-root = json.loads(r.read())
-y1 = root["children"]
+input1 = raw_input() 
+url1 = 'http://projects.scratch.mit.edu/internalapi/project/'+input1+'/get/'
+r1 = urllib2.urlopen(url1)
+root1 = json.loads(r1.read())
+y1 = root1["children"]
 s1 = y1[0][u'scripts']
 #プログラムB
-input = raw_input() 
-url = 'http://projects.scratch.mit.edu/internalapi/project/'+input+'/get/'
-r = urllib2.urlopen(url)
-root = json.loads(r.read())
-y2 = root["children"]
-s2 = y1[0][u'scripts']
-
+input2 = raw_input() 
+url2 = 'http://projects.scratch.mit.edu/internalapi/project/'+input2+'/get/'
+r2 = urllib2.urlopen(url2)
+root2 = json.loads(r2.read())
+y2 = root2["children"]
+s2 = y2[0][u'scripts']
+print s1
+print '----'
+print s2
 
 def printFirst(L):
     if isinstance(L, list):
@@ -130,3 +132,4 @@ class SimCalculator():
 if __name__ == '__main__':
     sc = SimCalculator()
     print(str(sc.sim_cos(xxx,yyy)))
+

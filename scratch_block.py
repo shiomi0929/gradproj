@@ -139,7 +139,9 @@ block = {
     'stringLength':0,
     '%':0,
     'rounded':0,
-    'computeFunction:of':0
+    'computeFunction:of':0,
+#その他
+    'procDef':0
 }
 
 block2 = sorted(block)

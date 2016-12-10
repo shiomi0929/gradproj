@@ -1,0 +1,18 @@
+# -*- coding: utf-8 -*-
+
+#import numpy as np
+
+
+import json
+import scratch_block
+import urllib2
+
+input1 = raw_input() 
+url1 = 'http://projects.scratch.mit.edu/internalapi/project/'+input1+'/get/'
+r1 = urllib2.urlopen(url1)
+root1 = json.loads(r1.read())
+
+a1 = root1[u'objName']
+
+
+print a1

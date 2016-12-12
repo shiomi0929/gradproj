@@ -139,9 +139,12 @@ class SimCalculator():
             return 0
         return numerator / denominator
 
+list = []
+
 if __name__ == '__main__':
     sc = SimCalculator()
     answer = str(sc.sim_cos(xxx,yyy))
+    list = [input1, input2, answer]
     print answer
-#csvWriter.writerow(answer)
+csvWriter.writerow(list)
 

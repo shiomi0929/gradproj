@@ -6,27 +6,10 @@
 import json
 import scratch_block
 import urllib2
-"""
-#プログラムの読み込み
-#scratchIDの入力
-#プログラムA
-input1 = raw_input() 
-url1 = 'http://projects.scratch.mit.edu/internalapi/project/'+input1+'/get/'
-r1 = urllib2.urlopen(url1)
-root1 = json.loads(r1.read())
-y1 = root1["children"]
-s1 = y1[0][u'scripts']
-#プログラムB
-input2 = raw_input() 
-url2 = 'http://projects.scratch.mit.edu/internalapi/project/'+input2+'/get/'
-r2 = urllib2.urlopen(url2)
-root2 = json.loads(r2.read())
-y2 = root2["children"]
-s2 = y2[0][u'scripts']
-print s1
-print '----'
-print s2
-"""
+import csv
+
+f = open('cos.csv', 'ab')
+csvWriter = csv.writer(f)
 
 def printFirst(L):
     if isinstance(L, list)and len(L)>0 :
@@ -60,6 +43,7 @@ def getFirst(L, dict):
             getFirst(e,dict)
 
 input1 = raw_input() 
+#csvWriter.writerow(input1)
 url1 = 'http://projects.scratch.mit.edu/internalapi/project/'+input1+'/get/'
 r1 = urllib2.urlopen(url1)
 root1 = json.loads(r1.read())
@@ -70,7 +54,7 @@ for i in range(len(y1)):
     s1 = y1[0][u'scripts']
     getFirst(s1,x)
 
-print x
+#print x
 
 
 #x = {}
@@ -91,6 +75,7 @@ for ww in xx:
 #y = {}
 
 input2 = raw_input() 
+#csvWriter.writerow(input2)
 url2 = 'http://projects.scratch.mit.edu/internalapi/project/'+input2+'/get/'
 r2 = urllib2.urlopen(url2)
 root2 = json.loads(r2.read())
@@ -102,7 +87,7 @@ for i in range(len(y2)):
     s2 = y2[0][u'scripts']
     getFirst(s2,y)
 
-print y
+#print y
 
 #for www in y:
 #    y[www]=0
@@ -156,5 +141,7 @@ class SimCalculator():
 
 if __name__ == '__main__':
     sc = SimCalculator()
-    print(str(sc.sim_cos(xxx,yyy)))
+    answer = str(sc.sim_cos(xxx,yyy))
+    print answer
+#csvWriter.writerow(answer)
 

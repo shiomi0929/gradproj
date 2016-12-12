@@ -6,7 +6,7 @@
 import json
 import scratch_block
 import urllib2
-
+"""
 #プログラムの読み込み
 #scratchIDの入力
 #プログラムA
@@ -26,6 +26,7 @@ s2 = y2[0][u'scripts']
 print s1
 print '----'
 print s2
+"""
 
 def printFirst(L):
     if isinstance(L, list)and len(L)>0 :
@@ -58,10 +59,22 @@ def getFirst(L, dict):
         for e in L:
             getFirst(e,dict)
 
-#x = {}
+input1 = raw_input() 
+url1 = 'http://projects.scratch.mit.edu/internalapi/project/'+input1+'/get/'
+r1 = urllib2.urlopen(url1)
+root1 = json.loads(r1.read())
+y1 = root1["children"]
 
 x = scratch_block.block
-getFirst(s1,x)
+for i in range(len(y1)):
+    s1 = y1[0][u'scripts']
+    getFirst(s1,x)
+
+print x
+
+
+#x = {}
+
 
 #print result.values()
 
@@ -76,11 +89,23 @@ for ww in xx:
 #print xxx
 #print "*****"
 #y = {}
-y = scratch_block.block
-for www in y:
-    y[www]=0
 
-getFirst(s2,y)
+input2 = raw_input() 
+url2 = 'http://projects.scratch.mit.edu/internalapi/project/'+input2+'/get/'
+r2 = urllib2.urlopen(url2)
+root2 = json.loads(r2.read())
+y2 = root2["children"]
+
+y = scratch_block.block
+
+for i in range(len(y2)):
+    s2 = y2[0][u'scripts']
+    getFirst(s2,y)
+
+print y
+
+#for www in y:
+#    y[www]=0
 
 #print result.values()
 #result_s = sorted(result.items(), reverse = True, key = lambda x: x[1])

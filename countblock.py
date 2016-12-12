@@ -21,7 +21,7 @@ a1 = root1[u'children']
 count = 0
 
 for i in range(len(a1)):
-   # print a1[i][u'objName']
+    print a1[i][u'objName']
     listData = []
     count += 1
     listData.append(count)

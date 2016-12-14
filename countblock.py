@@ -15,21 +15,22 @@ input1 = raw_input()
 url1 = 'http://projects.scratch.mit.edu/internalapi/project/'+input1+'/get/'
 r1 = urllib2.urlopen(url1)
 root1 = json.loads(r1.read())
-
-a1 = root1[u'children']
+y1 = root1["children"]
 
 count = 0
+for i in range(len(y1)):
+    if 'objName' in y1[i]:
+        count += 1
+print count
 
-for i in range(len(a1)):
-    print a1[i][u'objName']
-    listData = []
-    count += 1
-    listData.append(count)
+"""
+#count = len(a1)
+listData = []
+listData.append(count)
 csvWriter.writerow(listData)
 
 f.close()
-
-print count
+"""
 
 """
 x1 = a1[0][u'objName']

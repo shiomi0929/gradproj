@@ -9,6 +9,32 @@
 \usepackage{wrapfig}
 \usepackage{ascmac}
 \usepackage{makeidx}
+\usepackage[dvipdfmx]{graphicx}
+
+\usepackage{listings, jlisting}
+\usepackage{color}
+ 
+\lstset{
+    language=Python,%プログラミング言語によって変える。
+    numbers = left,
+    numberstyle = {\tiny \emph},
+    numbersep = 10pt,
+    breaklines = true,
+    breakindent = 40pt,
+    frame = tlRB,
+    frameround = ffft,
+    framesep = 3pt,
+    rulesep = 1pt,
+    rulecolor = {\color{black}},
+    rulesepcolor = {\color{black}},
+    flexiblecolumns = true,
+    keepspaces = false,
+    basicstyle = \scriptsize,
+    identifierstyle = \itshape\scriptsize,
+    commentstyle = \fontfamily{ptm}\selectfont\scriptsize,
+    stringstyle = \scshape\scriptsize,
+    tabsize = 4, 
+ }
 
 \makeindex
 %%% 余白・文字数調整(左37mm, 右18mm, 上下共30mm, 文字数約40字/行, 行数約32行)
@@ -84,14 +110,29 @@
 \chapter{はじめに}
 \section{本研究の背景}
 
-%文章
+2006年に開発されたScratchというビジュアルプログラミング環境がある。本研究ではScratchのデータを用いて教育の場で役立てる方法を導き出す。Scratchとは米国マサチューセッツ工科大学のメディアラボが開発したフリーツールであり、キーボードでコードを打つのではなくパズルのようにブロックを組み合わせてプログラムの完成させる。
+近年、世界ではIT化が進み、物とインターネットを繋ぐIoTが次々と増えていく中エンジニア不足が叫ばれている。しかし世界的に見るとプログラミング分野では日本は遅れている。総務省平成２６年度「教育・学習分野の情報化に係る国内外の動向と先進事例」では世界各国でプログラミング教育が活発化していることが分かる（図1.1）。日本の旧学習指導要領の必修科目では、パドコンでワードやエクセルの使い方の教育しか行っていないが、イスラエルではコンピュータの使い方よりも原理やプログラミングを教える教育が行われている。
+そのため文部科学省が2016年5月19日に発表をした成長戦略素案では第４次産業革命を支える人材を強化するため情報活用能力を伸ばそうと2020年度から小学校、2021年度に中学校、2022年度には高校でプログラミング教育での必修化の予定されている。それに先駆けて国内の学校では実際にプログラミングを行う授業も増えているという。品川区立京陽小学校では2014年度よりScratchが導入され各教科の中で活用されている。例えば理科の授業で実験結果をシミュレーションするプログラムの作成にScratchが用いられているようだ。
+\begin{figure}[h]
+  \centering
+    \includegraphics[scale=0.4]{graphic/foreign_data.pdf}
+  \caption{平成２６年度総務省 教育・学習分野の情報化に係る国内外の動向と先進事例}
+ \end{figure}
+ 
+\begin{figure}[h]
+  \centering
+    \includegraphics[scale=0.4]{graphic/world_japan.pdf}
+  \caption{全世界のScratchユーザー　日本　130,764人　0.88\%}
+   \end{figure}
+Scratchでは全世界のユーザーのうち日本でのユーザーは現状で１％（図1.2）である。Scratch公式では利用者の数、年齢、使っているブロック等の統計データの公表があるが、Scratch自体を題材にしている先行研究は日本では数が多くない。そこで義務教育化に伴い日本でも教育現場でScratchを導入しやすくするため公開されているプログラムやデータを利用して解析を行う。
 
-
+\newpage
 \section{本研究の目的}
 
-%文章
+本研究ではScratchで公開されているプログラム、統計データを利用して教育現場で使いやすい新たなデータの創出を目的とする。
+Scratchの現状機能を調査し、プログラミング教育における課題点を解決に導く分析を目指す。
 
-\section{本論文の構成}
+%\section{本論文の構成}
 
 %文章
 
@@ -116,52 +157,78 @@
 %『なんだよさっき，``一番最初に''って言ったじゃないか！』とお怒りを受けそうだが，研究(\textit{re-search})を進める上で調査(\textit{search})をせよ，つまり先人の研究や論文検索をせよ，という前期のゼミで先生方が課しているようなアタリマエのことを述べただけであり，最初に書くのはせいぜいメモ程度，論文要旨程度の分量で構わない．
 
 \part{本論}
+
+%ちさちゃん
 \chapter{Scratchについて}
 \section{Scratchとは}
 \section{Scratchの使い方}
 \section{Scratchの利点、欠点}
 \section{研究におけるScratchの利用意義}
+
+%しおみ
 \chapter{Scratch公式可視化データの現状}
-\section{ブロック}
+\section{ブロックの使用頻度}
+
+Scratch公式では無作為に選ばれたプログラムで使用されているブロックの種類を集計し、項目ごとに色を分けて使用頻度を可視化してある。高い割合の項目ほど面積が大きい。
+ 項目をクリックすると使用頻度の高いブロックが同じように面積が大きく表示される。この図ではScratch全体で使われているブロックの使用頻度の把握が可能である。しかしユーザー個人個人が作成したプログラムのブロックの使用頻度が分かるということではない。
+ 
+\begin{figure}[ht]
+  \centering
+    \includegraphics[scale=0.5]{graphic/scratch_block0.pdf}
+  \caption{全ユーザーブロック使用度}
+ \end{figure}
+ 
+ \begin{figure}[ht]
+  \centering
+    \includegraphics[scale=0.5]{graphic/scratch_block.pdf}
+  \caption{全ユーザーブロック費用頻度　Locks（制御ブロック）をクリックした時}
+ \end{figure}
+ 
+ 
+ 
 \section{Remixツリー}
+木構造になっているリミックスツリーは根元のプログラムを元として引用関係を表している。さらに引用されたプログラムを引用した場合も反映される。この図のデメリットはどのくらい変更が加えられているかがわからない点から元のプログラムと先端のプログラムの差を把握することは不可能である。
+
+\begin{figure}[ht]
+  \centering
+    \includegraphics[scale=0.5]{graphic/remixtree_all.pdf}
+  \caption{Pong Starter のリミックスツリー}
+ \end{figure}
+
+\begin{figure}[hb]
+  \centering
+    \includegraphics[scale=0.5]{graphic/remixtree_detail.pdf}
+  \caption{Pong Starter のリミックスツリー　左下詳細}
+ \end{figure}
+ 
+ 
+
+
 \chapter{制作内容}
 \section{分析内容}
-\subsection{ブロックの種類の集計}
+%\subsection{ブロックの種類の集計}
 \subsection{cos類似度の計算}
+\lstinputlisting[caption=cos類似度の計算]{cosSample.py}
 \subsection{ブロックとスプライトの合計数}
+\lstinputlisting[caption=ブロックの合計]{countSample.py}
+\lstinputlisting[caption=scratchAnalysis.py]{scratchAnalysis.py}
+\lstinputlisting[caption=SimCalculator.py]{SimCalculator.py}
 \section{グラフ化}
-\section{cos類似度とブロック数のグラフ}
-\section{cos類似度とスプライト数のグラフ}
 
-
-
-
-%\fbox{読み手が正しく理解できるか}，という品質の問題と，\fbox{読み手と同じ順序で書く}という方法は一致している必要がない．
-
-
-% 表の挿入
-%\begin{table}[h]
-% \caption{おすすめの執筆順序}% {}内に表題を書く
-% \begin{center}
-%  \begin{tabular}{|c|c|l|} %セル内の位置｛c:センタリング，l:左寄せ｝，パイプ「|」縦罫線
-%    \hline
-%     1  &  4章  & 開発の中身，実験方法となんとなく見えている(or 予想される)結果   \\
-%    \hline
-%     2  &  3章  & 理論と仮説，この段階ではだいたいでいい，上記実験のベースになっている素案ぐらいでも．   \\
-%    \hline
-%     3  &  5章  & 結果のグラフ，理解できるグラフを描きなおすために実験をやり直してもいい．チート厳禁．   \\
-%    \hline
-%     4  &  2章＋3章  & 関連研究，課題設定→理論までの展開を整理しながら   \\
-%    \hline
-%     5  &  1章＋6章  & できた結果について素直に受け止められるよう，風呂敷を広げすぎずに．   \\
-%    \hline
-%     6  &  論文概要  &  章構成を再度見直し，推敲時にブレないように，ここで固める．  \\
-%    \hline
-%     7  &  全章推敲  &  このあたりでやっと先輩や先生に見せられるレベル，ただし卒業は見通しが出る．  \\
-%    \hline
-%  \end{tabular}
-% \end{center}
-%\end{table}
+\subsection{cos類似度とブロック数のグラフ}
+\begin{figure}[h]
+  \centering
+    \includegraphics[scale=0.8]{graphic/block_graph.pdf}
+  \caption{cos類似度とブロック数のグラフ}
+ \end{figure}
+ 
+ 
+\subsection{cos類似度とスプライト数のグラフ}
+\begin{figure}[h]
+  \centering
+    \includegraphics[scale=0.8]{graphic/spl_graph.pdf}
+  \caption{cos類似度とスプライト数のグラフ}
+ \end{figure}
 
 
 
@@ -184,12 +251,6 @@
 
 \chapter{結論}
 
-
-%%% 付録
-\appendix
-付録，ソースコードなど．
-ソースコードを直接取り込むパッケージもある．
-http://blog.santalinux.net/?p=135
 
 %
 %%% 謝辞

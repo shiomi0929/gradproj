@@ -1,0 +1,620 @@
+This is e-pTeX, Version 3.14159265-p3.7-160201-2.6 (utf8.euc) (TeX Live 2016) (preloaded format=platex 2016.12.18)  4 JAN 2017 23:36
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**gradthesis.tex
+(./gradthesis.tex
+pLaTeX2e <2016/05/07> (based on LaTeX2e <2016/03/31>)
+Babel <3.9r> and hyphenation patterns for 83 language(s) loaded.
+(/usr/local/texlive/2016/texmf-dist/tex/platex/jsclasses/jsbook.cls
+Document Class: jsbook 2014/02/07 okumura
+LaTeX Info: Redefining \rmfamily on input line 359.
+LaTeX Info: Redefining \sffamily on input line 362.
+LaTeX Info: Redefining \ttfamily on input line 365.
+\symmincho=\mathgroup4
+LaTeX Font Info:    Overwriting symbol font `mincho' in version `bold'
+(Font)                  JY1/mc/m/n --> JY1/gt/m/n on input line 430.
+LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
+(Font)              scaled to size 9.60999pt on input line 620.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 9.60999pt on input line 620.
+\fullwidth=\dimen118
+LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
+(Font)              scaled to size 7.68799pt on input line 775.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 7.68799pt on input line 775.
+\c@part=\count81
+\c@chapter=\count82
+\c@section=\count83
+\c@subsection=\count84
+\c@subsubsection=\count85
+\c@paragraph=\count86
+\c@subparagraph=\count87
+\c@figure=\count88
+\c@table=\count89
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\js@tocl@width=\dimen119
+\@lnumwidth=\dimen120
+\bibindent=\dimen121
+LaTeX Info: Redefining \TeX on input line 1815.
+LaTeX Info: Redefining \LaTeX on input line 1841.
+LaTeX Info: Redefining \LaTeXe on input line 1866.
+\heisei=\count90
+) (/usr/local/texlive/2016/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2016/03/10 v2.15b AMS math features
+\@mathmargin=\skip43
+
+For additional information on amsmath, use the `?' option.
+(/usr/local/texlive/2016/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01 AMS text
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks15
+\ex@=\dimen122
+))
+(/usr/local/texlive/2016/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen123
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2016/03/08 v2.02 operator names
+)
+\inf@bad=\count91
+LaTeX Info: Redefining \frac on input line 199.
+\uproot@=\count92
+\leftroot@=\count93
+LaTeX Info: Redefining \overline on input line 297.
+\classnum@=\count94
+\DOTSCASE@=\count95
+LaTeX Info: Redefining \ldots on input line 394.
+LaTeX Info: Redefining \dots on input line 397.
+LaTeX Info: Redefining \cdots on input line 518.
+\Mathstrutbox@=\box41
+\strutbox@=\box42
+\big@size=\dimen124
+LaTeX Font Info:    Redeclaring font encoding OML on input line 634.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 635.
+\macc@depth=\count96
+\c@MaxMatrixCols=\count97
+\dotsspace@=\muskip10
+\c@parentequation=\count98
+\dspbrk@lvl=\count99
+\tag@help=\toks16
+\row@=\count100
+\column@=\count101
+\maxfields@=\count102
+\andhelp@=\toks17
+\eqnshift@=\dimen125
+\alignsep@=\dimen126
+\tagshift@=\dimen127
+\tagwidth@=\dimen128
+\totwidth@=\dimen129
+\lineht@=\dimen130
+\@envbody=\toks18
+\multlinegap=\skip44
+\multlinetaggap=\skip45
+\mathdisplay@stack=\toks19
+LaTeX Info: Redefining \[ on input line 2739.
+LaTeX Info: Redefining \] on input line 2740.
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup5
+\symAMSb=\mathgroup6
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+))
+(/usr/local/texlive/2016/texmf-dist/tex/latex/tools/bm.sty
+Package: bm 2016/02/27 v1.2a Bold Symbol Support (DPC/FMi)
+\symboldoperators=\mathgroup7
+\symboldletters=\mathgroup8
+\symboldsymbols=\mathgroup9
+\symboldmincho=\mathgroup10
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 142.
+LaTeX Info: Redefining \bm on input line 208.
+) (./epsbox.sty
+EPSbox version 1.7b for LaTeX/jdvi2kps2.1-3.0 (May 26, 1992)
+Based on EPSF macro package. version 1.2 - Released July 16, 1990
+\@darg=\dimen131
+\eps@xdim=\dimen132
+\eps@ydim=\dimen133
+\eps@width=\dimen134
+\eps@height=\dimen135
+\eps@tempdima=\dimen136
+\eps@tempdimb=\dimen137
+\eps@cnta=\count103
+\eps@cntb=\count104
+\eps@cntc=\count105
+\eps@cntd=\count106
+\ps@stream=\read1
+) (/usr/local/texlive/2016/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks20
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2016/05/09 v1.0r Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/01/02 v1.10 sample graphics configuration
+)
+Package graphics Info: Driver file: dvipdfmx.def on input line 96.
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/dvipdfmx-def/dvipdfmx.def
+File: dvipdfmx.def 2016/04/06 v4.08 LaTeX color/graphics driver for dvipdfmx (T
+eX Live/ChoF)
+
+(/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
+)
+(/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
+)))
+\Gin@req@height=\dimen138
+\Gin@req@width=\dimen139
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/tools/verbatim.sty
+Package: verbatim 2014/10/28 v1.5q LaTeX2e package for verbatim enhancements
+\every@verbatim=\toks21
+\verbatim@line=\toks22
+\verbatim@in@stream=\read2
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/wrapfig/wrapfig.sty
+\wrapoverhang=\dimen140
+\WF@size=\dimen141
+\c@WF@wrappedlines=\count107
+\WF@box=\box43
+\WF@everypar=\toks23
+Package: wrapfig 2003/01/31  v 3.6
+)
+(/usr/local/texlive/2016/texmf-dist/tex/platex/base/ascmac.sty
+Package: ascmac 2016/04/15 v2.0b ascmac wrapper (community edition) 
+
+(/usr/local/texlive/2016/texmf-dist/tex/platex/base/tascmac.sty
+Package: tascmac 2016/04/15 v2.0b ascmac package (community edition) 
+\@savetbaselineshift=\dimen142
+\@saveybaselineshift=\dimen143
+\scb@x=\box44
+\scscb@x=\box45
+\@bw=\dimen144
+\@nbox=\box46
+\@nbody=\box47
+\@scw=\dimen145
+\@itemh=\dimen146
+\@iboxpos=\toks24
+\@iboxstr=\box48
+\@bwsp=\box49
+\@@bwsp=\box50
+\@bcal=\count108
+\shaderule=\dimen147
+))
+(/usr/local/texlive/2016/texmf-dist/tex/latex/base/makeidx.sty
+Package: makeidx 2014/09/29 v1.0m Standard LaTeX package
+) (./listings.sty
+\lst@mode=\count109
+\lst@gtempboxa=\box51
+\lst@token=\toks25
+\lst@length=\count110
+\lst@currlwidth=\dimen148
+\lst@column=\count111
+\lst@pos=\count112
+\lst@lostspace=\dimen149
+\lst@width=\dimen150
+\lst@newlines=\count113
+\lst@lineno=\count114
+\c@lstlisting=\count115
+\lst@maxwidth=\dimen151
+(./lstpatch.sty
+File: lstpatch.sty 2004/10/17 1.3b (Carsten Heinz)
+) (./lstmisc.sty
+File: lstmisc.sty 2004/09/07 1.3 (Carsten Heinz)
+\c@lstnumber=\count116
+\lst@skipnumbers=\count117
+\lst@framebox=\box52
+) (./listings.cfg
+File: listings.cfg 2004/09/05 1.3 listings configuration
+))
+Package: listings 2004/10/17 1.3b (Carsten Heinz)
+ (./jlisting.sty
+Package: jlisting 2006/02/20 0.2 (Thor)
+\lst@nextchar=\count118
+\lst@inputfile=\read3
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/graphics/color.sty
+Package: color 2016/05/09 v1.1c Standard LaTeX Color (DPC)
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package color Info: Driver file: dvips.def on input line 144.
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/graphics/dvips.def
+File: dvips.def 2015/12/30 v3.0k Driver-dependent file (DPC,SPQR)
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/graphics/dvipsnam.def
+File: dvipsnam.def 2015/12/30 v3.0k Driver-dependent file (DPC,SPQR)
+))
+(./lstlang1.sty
+File: lstlang1.sty 2004/09/05 1.3 listings language file
+)
+\@indexfile=\write3
+\openout3 = `gradthesis.idx'.
+
+
+Writing index file gradthesis.idx
+(./gradthesis.aux)
+\openout1 = `gradthesis.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for JY1/mc/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for JT1/mc/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
+(Font)              scaled to size 11.53198pt on input line 70.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 11.53198pt on input line 70.
+LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
+(Font)              scaled to size 19.9311pt on input line 77.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 19.9311pt on input line 77.
+ [1
+
+
+]
+LaTeX Font Info:    Font shape `JT1/gt/m/n' will be
+(Font)              scaled to size 9.60999pt on input line 104.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 9.60999pt on input line 104.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 6.72699pt on input line 104.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 4.805pt on input line 104.
+LaTeX Font Info:    Try loading font information for U+msa on input line 104.
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 104.
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 6.72699pt on input line 104.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 4.805pt on input line 104.
+LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <10> not available
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 104.
+LaTeX Font Info:    Font shape `JT1/gt/m/n' will be
+(Font)              scaled to size 9.60999pt on input line 104.
+LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <10> not available
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 104.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 9.60999pt on input line 104.
+ [1
+
+]
+LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
+(Font)              scaled to size 23.90964pt on input line 104.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 23.90964pt on input line 104.
+LaTeX Font Info:    Font shape `JT1/gt/m/n' will be
+(Font)              scaled to size 23.90964pt on input line 104.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 23.90964pt on input line 104.
+
+(./gradthesis.toc
+LaTeX Font Info:    Font shape `JT1/gt/m/n' will be
+(Font)              scaled to size 11.53198pt on input line 1.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 11.53198pt on input line 1.
+ [2
+
+])
+\tf@toc=\write4
+\openout4 = `gradthesis.toc'.
+
+ [3]
+LaTeX Font Info:    Font shape `JT1/gt/m/n' will be
+(Font)              scaled to size 19.9311pt on input line 111.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 19.9311pt on input line 111.
+ [1
+
+
+]
+第1章
+LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
+(Font)              scaled to size 13.83836pt on input line 113.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 13.83836pt on input line 113.
+LaTeX Font Info:    Font shape `JT1/gt/m/n' will be
+(Font)              scaled to size 13.83836pt on input line 113.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 13.83836pt on input line 113.
+File: graphic/foreign_data.pdf Graphic file (type pdf)
+<graphic/foreign_data.pdf>
+LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
+(Font)              scaled to size 8.64899pt on input line 121.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 8.64899pt on input line 121.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+File: graphic/world_japan.pdf Graphic file (type pdf)
+<graphic/world_japan.pdf>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[2
+
+] [3] [4
+
+]
+第2章
+File: scratch_editor_main.pdf Graphic file (type pdf)
+<scratch_editor_main.pdf>
+File: pong_starter_editor.pdf Graphic file (type pdf)
+ <pong_starter_editor.pdf>
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[5
+
+] [6] [7] [8]
+第3章
+File: graphic/scratch_block0.pdf Graphic file (type pdf)
+<graphic/scratch_block0.pdf>
+File: graphic/scratch_block.pdf Graphic file (type pdf)
+ <graphic/scratch_block.pdf> [9
+
+]
+File: graphic/remixtree_all.pdf Graphic file (type pdf)
+
+<graphic/remixtree_all.pdf>
+File: graphic/remixtree_detail.pdf Graphic file (type pdf)
+ <graphic/remixtree_detail.pdf> [10] [11]
+第4章
+
+LaTeX Warning: Reference `remixtreedis' on page 12 undefined on input line 219.
+
+
+[12
+
+]
+LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
+(Font)              scaled to size 6.72699pt on input line 229.
+LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
+(Font)              scaled to size 4.805pt on input line 230.
+LaTeX Font Info:    Font shape `JT1/gt/m/n' will be
+(Font)              scaled to size 4.805pt on input line 230.
+LaTeX Font Info:    Font shape `JT1/gt/m/it' in size <5> not available
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 230.
+LaTeX Font Info:    Font shape `JT1/gt/m/n' will be
+(Font)              scaled to size 4.805pt on input line 230.
+LaTeX Font Info:    Font shape `JY1/gt/m/it' in size <5> not available
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 230.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 4.805pt on input line 230.
+LaTeX Font Info:    Font shape `JT1/mc/m/it' in size <7> not available
+(Font)              Font shape `JT1/mc/m/n' tried instead on input line 230.
+LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
+(Font)              scaled to size 6.72699pt on input line 230.
+LaTeX Font Info:    Font shape `JY1/mc/m/it' in size <7> not available
+(Font)              Font shape `JY1/mc/m/n' tried instead on input line 230.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 6.72699pt on input line 230.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 231.
+
+ (/usr/local/texlive/2016/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <7> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 231.
+LaTeX Font Info:    Font shape `JT1/mc/m/sc' in size <7> not available
+(Font)              Font shape `JT1/mc/m/n' tried instead on input line 232.
+LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
+(Font)              scaled to size 6.72699pt on input line 232.
+LaTeX Font Info:    Font shape `JY1/mc/m/sc' in size <7> not available
+(Font)              Font shape `JY1/mc/m/n' tried instead on input line 232.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 6.72699pt on input line 232.
+LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <7> not available
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 233.
+LaTeX Font Info:    Font shape `JT1/gt/m/n' will be
+(Font)              scaled to size 6.72699pt on input line 233.
+LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <7> not available
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 233.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 6.72699pt on input line 233.
+ [13]
+[14] (I search kanjifont definition file: . . )
+(I search font definition file: . . . . . . . )
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 266.
+
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/psnfss/ot1ptm.fd
+File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
+)
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 266.
+
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/psnfss/omsptm.fd
+File: omsptm.fd 
+)
+LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <7> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 266.
+ [15]
+LaTeX Font Info:    Try loading font information for OML+cmr on input line 268.
+
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/base/omlcmr.fd
+File: omlcmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <7> not available
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 268.
+ [16] [17]
+[18] [19]
+LaTeX Font Info:    Font shape `OMS/cmr/m/sc' in size <7> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 270.
+LaTeX Font Info:    Font shape `OML/cmr/m/sc' in size <7> not available
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 270.
+ [20]
+
+LaTeX Warning: Citation `sbprog' on page 21 undefined on input line 340.
+
+[21] [22]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[23] [24] [25
+
+]
+第5章
+File: graph_first_block.pdf Graphic file (type pdf)
+<graph_first_block.pdf>
+File: graph_second_block.pdf Graphic file (type pdf)
+ <graph_second_block.pdf>
+File: graph_third_block.pdf Graphic file (type pdf)
+ <graph_third_block.pdf>
+File: graph_fourth_block.pdf Graphic file (type pdf)
+
+<graph_fourth_block.pdf>
+Underfull \hbox (badness 10000) in paragraph at lines 391--419
+[][][][]
+ []
+
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 424.
+[26
+
+] [27]
+File: graph_first_splite.pdf Graphic file (type pdf)
+ <graph_first_splite.pdf>
+File: graph_second_splite.pdf Graphic file (type pdf)
+ <graph_second_splite.pdf>
+File: graph_third_splite.pdf Graphic file (type pdf)
+
+<graph_third_splite.pdf>
+File: graph_fourth_splite.pdf Graphic file (type pdf)
+ <graph_fourth_splite.pdf>
+Underfull \hbox (badness 10000) in paragraph at lines 468--496
+[][][][]
+ []
+
+[28] [29]
+第6章
+[30
+
+]
+第7章
+[31
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 569--570
+[]\JY1/mc/m/n/10 教育 ・ 学習分野の情報化に係る国内外の動向と先進事例\OT1/cmr/m
+/n/10 , \JY1/mc/m/n/10 総務省
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 573--574
+[]\OT1/cmr/m/n/10 Scratch \JY1/mc/m/n/10 で始めるプログラミング教育 （ １ ） ：
+ プログラミングを学習す
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 573--574
+\JY1/mc/m/n/10 る意義 、 \OT1/cmr/m/n/10 Scratch \JY1/mc/m/n/10 の基本的な使い
+方超入門 \OT1/cmr/m/n/10 (2016 \JY1/mc/m/n/10 年 \OT1/cmr/m/n/10 3 \JY1/mc/m/n/
+10 月 \OT1/cmr/m/n/10 21 \JY1/mc/m/n/10 日\OT1/cmr/m/n/10 ), \JY1/mc/m/n/10 薬
+師寺国安
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 574--575
+[]\OT1/cmr/m/n/10 Scratch - Imag-ine, Pro-gram, Share, Scratch \JY1/mc/m/n/10 
+について\OT1/cmr/m/n/10 , MIT Me-dia Lab
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 578--579
+[] \JY1/mc/m/n/10 【\OT1/cmr/m/n/10 Python \JY1/mc/m/n/10 入門 】 \OT1/cmr/m/n/
+10 JSON \JY1/mc/m/n/10 形式デ ータの扱い方 \OT1/cmr/m/n/10 (2016 \JY1/mc/m/n/10
+ 年 \OT1/cmr/m/n/10 12 \JY1/mc/m/n/10 月 \OT1/cmr/m/n/10 12 \JY1/mc/m/n/10 日\O
+T1/cmr/m/n/10 ), Morio
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 580--581
+[]\OT1/cmr/m/n/10 TF-IDF Cos \JY1/mc/m/n/10 類似度推定法 \OT1/cmr/m/n/10 - Qi-i
+ta (2015 \JY1/mc/m/n/10 年 \OT1/cmr/m/n/10 8 \JY1/mc/m/n/10 月 \OT1/cmr/m/n/10 
+24 \JY1/mc/m/n/10 日\OT1/cmr/m/n/10 ), nm-bakfm
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 584--585
+[]\OT1/cmr/m/n/10 2. \JY1/mc/m/n/10 組み込み関数 ー \OT1/cmr/m/n/10 Python2.7.x
+ \JY1/mc/m/n/10 ドキ ュメント \OT1/cmr/m/n/10 (2017 \JY1/mc/m/n/10 年 \OT1/cmr/
+m/n/10 1 \JY1/mc/m/n/10 月 \OT1/cmr/m/n/10 2 \JY1/mc/m/n/10 日\OT1/cmr/m/n/10 )
+,
+ []
+
+[32
+
+]
+Underfull \hbox (badness 6961) in paragraph at lines 585--586
+[]\OT1/cmr/m/n/10 Unicode \JY1/mc/m/n/10 文字列 \OT1/cmr/m/n/10 (\JY1/mc/m/n/10
+ ユニコ ード文字列\OT1/cmr/m/n/10 ) - \JY1/mc/m/n/10 文字列 \OT1/cmr/m/n/10 - P
+ython-Web, TAT-SUO IKURA,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 586--587
+[]\OT1/cmr/m/n/10 5. \JY1/mc/m/n/10 組み込み型 ー \OT1/cmr/m/n/10 Python2.7.x \
+JY1/mc/m/n/10 ドキ ュメント \OT1/cmr/m/n/10 (2017 \JY1/mc/m/n/10 年 \OT1/cmr/m/
+n/10 1 \JY1/mc/m/n/10 月 \OT1/cmr/m/n/10 2 \JY1/mc/m/n/10 日\OT1/cmr/m/n/10 ),
+ []
+
+[33]
+No file gradthesis.ind.
+(./gradthesis.aux)
+
+LaTeX Warning: There were undefined references.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 3994 strings out of 493693
+ 52641 string characters out of 6149786
+ 336746 words of memory out of 5000000
+ 7441 multiletter control sequences out of 15000+600000
+ 21388 words of font info for 96 fonts, out of 8000000 for 9000
+ 934 hyphenation exceptions out of 8191
+ 32i,12n,42p,1189b,1679s stack positions out of 5000i,500n,10000p,200000b,80000s
+
+Output written on gradthesis.dvi (37 pages, 181440 bytes).

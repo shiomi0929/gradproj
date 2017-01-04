@@ -1,0 +1,9 @@
+#coding:utf-8
+import csv
+
+t = open('id.csv', 'id')
+
+dataReader = csv.reader(t)
+
+for row in dataReader:
+    print row

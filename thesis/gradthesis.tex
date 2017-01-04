@@ -195,7 +195,7 @@ Scratch公式では無作為に選ばれたプログラムで使用されてい�
  \end{figure}
  
  
- 
+\newpage
 \section{リミックスツリー}
 木構造になっているリミックスツリーは根元のプログラムを元として引用関係を表している。(図\ref{psrt})さらに引用されたプログラムを引用した場合も反映される。(図\ref{rtdit})この図はどのくらい変更が加えられているかがわからない点から元のプログラムと先端のプログラムの差を把握することは難関である。
 
@@ -221,13 +221,12 @@ Scratch公式では無作為に選ばれたプログラムで使用されてい�
 つまり何も変更が加えられてないプロジェクトとかなり改造されたプロジェクトの違いは可視化されない。学ぶ側はレベルの把握、教える側には評価をしやすいくするために変化の度合いの可視化を可能にする。
  \section{実験方法と仮説}
 本研究では２万弱の引用がされている"Pong Starter"プロジェクトのリミックスツリー(\cite{pongret})を利用する。まず元のプログラムから引用されたものを１段目とする。以後１段目のプロジェクトから引用されたものを２段目、２段目から引用されたものを３段目とする。それらを順に元のプロジェクトと比較をしていき、使われたブロックの数、スプライト（オブジェクト）の数、類似度を表すcos類似度の数値化、グラフ化をする。リミックスツリーで表されているのは引用関係であるため、実際に１段目にあるものより３段目のものの方が元のプロジェクトと類似しているまた逆の結果が表れることが予測される。
+\newpage
  \section{技術の解説}
- 
 \subsection{使用するプログラミング言語}
 本研究ではScratch公式サイトよりプロジェクトをJSON形式でインポートし、Pythonを利用してデータを抽出、分析を行う。
 \subsubsection{Pythonとは}
 PythonはGuido van Rossum氏の作成した軽量プログラミング言語である。記述や取り回しが容易であり、コンパイルも不必要という特徴がある。(\cite{python})
-
  \begin{lstlisting}[caption=C言語,label=clan]
  void main()
  {
@@ -264,7 +263,14 @@ PythonではjsonモジュールをインポートすることでJSON形式ファ
  
 \subsection{プログラムの解説}
 本研究では２つのプログラムと１つの辞書データを使用する。ソースコード\ref{saprog}はブロック、スプライトの数、cos類似度を計算結果を出力する。ソースコード\ref{scprog}はcos類似度を実施に計算するプログラムとなっている。共通するブロックの名前の個数である値の積を分子、値の自乗をブロックの種類分足してルートをかけたものをA,Bそれぞれ計算しかけたものを分母として、割り算を行い、cos類似度を求めている。
-\\
+\newpage
+\lstinputlisting[caption=SimCalculator.py,label=scprog]{SimCalculator.py}
+\newpage
+\lstinputlisting[caption=scratchAnalysis.py,label=saprog]{scratchAnalysis.py}
+\newpage
+\lstinputlisting[caption=scratch\_block.py,label=sbprog]{scratch_block.py}
+\newpage
+\subsubsection{cos類似度とは}
 cos類似度とはベクトル空間モデルにおいて、文書同士を比較する際に用いられる類似度計算方法である。
 \begin{quote}
 コサイン類似度は、そのままベクトル同士の成す角度の近さを表現するため、三角関数の普通のコサインの通り、1に近ければ類似しており、0に近ければ似ていないことになる。(\cite{cos})
@@ -296,27 +302,81 @@ A \ast B = 1 \ast 2 + 2 \ast 0 + 0 \ast 1 + 1 \ast 0 + 0 \ast 1 = 2
 \\本研究では例”色”に当たる部分を、”ブロックの種類”にして計算を行った。Scratchでは数多くのブロックが用意されており、どのブロックを使用するかによって、まったく異なるプログラムを作成することができる。それぞれのプログラムのブロック数を集計した後、ソートしベクターに直し計算式に適用する。
 \subsubsection{SimCalculatorの解説}
 cos類似度の計算は次のプログラムで行う。（サンプルプログラム：\cite{simcalc}）
-\lstinputlisting[caption=SimCalculator.py,label=scprog]{SimCalculator.py}
-\ref{scprog}では２つのベクトルの内積を計算するsim\_cosを作る。
 \\
-sim\_cosでは\ref{saprog}のベクターリストxxxとyyyを引数とし内積の計算をする。v1(xxx)のn番目のブロックと同じものがv2(yyy)にも存在をするとき、変数numeratorに２つを掛け合わせたものを加える。次にそれぞれのベクターの値を二乗していったものの合計の平方根を掛け合わせたものが分母となるため変数denominatorと置く。最後にnumeratorをdenominatorで割ったものを返す。
+ソースコード\ref{scprog}では２つのベクトルの内積を計算するsim\_cosを作る。
+\\
+sim\_cosではソースコード\ref{saprog}のベクターリストxxxとyyyを引数とし内積の計算をする。v1(xxx)のn番目のブロックと同じものがv2(yyy)にも存在をするとき、変数numeratorに２つを掛け合わせたものを加える。次にそれぞれのベクターの値を二乗していったものの合計の平方根を掛け合わせたものが分母となるため変数denominatorと置く。最後にnumeratorをdenominatorで割ったものを返す。
 
-%\lstinputlisting[caption=cos類似度の計算]{cosSample.py}
-%\lstinputlisting[caption=ブロックの合計]{countSample.py}
-\lstinputlisting[caption=scratchAnalysis.py,label=saprog]{scratchAnalysis.py}
-\lstinputlisting[caption=scratch\_block.py,label=sbprog]{scratch_block.py}
 \subsubsection{scratchAnalysisの解説}
-プログラム\ref{saprog}では始めに使用するモジュールの読み込みをする。jsonデータを使用するためのモジュール（L10）、主にHTTPでURLを開くための関数およびクラスのurllib2モジュール（L11, \cite{urllib}）、csv形式（データをカンマで区切ったもの）のデータを扱うことができるcsvモジュール（L12）を読み込む。またscratch\_block（\cite{sbprog}）を同様に読み込む。このデータファイルはScratchに登場するブロックを辞書型にしたデータファイルscratch\_block.py(\ref{sbprog})であり、キーがブロックの名前、その値は初期値0を指定したものである。最後にcos類似度の計算を行うSimCalculator（\ref{scprog}）を読み込む。
+プログラム\ref{saprog}では始めに使用するモジュールの読み込みをする。jsonデータを使用するためのモジュール（L10）、主にHTTPでURLを開くための関数およびクラスのurllib2モジュール（L11, \cite{urllib}）、csv形式（データをカンマで区切ったもの）のデータを扱うことができるcsvモジュール（L12）を読み込む。またscratch\_block（ソースコード\ref{sbprog}）を同様に読み込む。このデータファイルはScratchに登場するブロックを辞書型にしたデータファイルscratch\_block.py(\ref{sbprog})であり、キーがブロックの名前、その値は初期値0を指定したものである。最後にcos類似度の計算を行うSimCalculator（ソースコード\ref{scprog}）を読み込む。
 \\
-L31ではバイナリーモードで開いたファイルオブジェクトを変数dataReaderと置く。ファイルを開く際には組み込み関数open()を使用する。(\cite{open}) open()とは開いたファイルをファイルオブジェクトを返す。その際にmodeを２つ目の引数で指定でき、本プログラムでは読み込み専用、バイナリーモードを指定している。このファイルはL141以降のfor文内で改め呼び出す。
+次に比較するプログラムURLのリスト化したものを読み込む。L31ではバイナリーモードで開いたファイルオブジェクトを変数dataReaderと置く。ファイルを開く際には組み込み関数open()を使用する。(\cite{open}) open()とは開いたファイルをファイルオブジェクトを返す。その際にmodeを２つ目の引数で指定でき、本プログラムでは読み込み専用、バイナリーモードを指定している。このファイルはL141以降のfor文内で改め呼び出す。
+\begin{table}[h]
+ \caption{【例】URLリストファイル}
+ \label{urllist}
+ \begin{center}
+\begin{tabular}{lclcl}
+https://scratch.mit.edu/projects/100275945/ \\
+https://scratch.mit.edu/projects/100492744/ \\
+https://scratch.mit.edu/projects/100742859/ \\
+https://scratch.mit.edu/projects/100821454/ \\
+https://scratch.mit.edu/projects/101706154/ \\
+https://scratch.mit.edu/projects/101833379/ \\
+https://scratch.mit.edu/projects/10190891/ \\
+https://scratch.mit.edu/projects/10191205/ \\
+https://scratch.mit.edu/projects/10191673/ \\
+https://scratch.mit.edu/projects/102090434/ \\
+https://scratch.mit.edu/projects/10214982/ \\
+https://scratch.mit.edu/projects/102313969/ \\
+https://scratch.mit.edu/projects/102381385/ \\
+https://scratch.mit.edu/projects/10245234/ \\
+https://scratch.mit.edu/projects/102562822/ \\
+https://scratch.mit.edu/projects/102589407/ \\
+https://scratch.mit.edu/projects/102718914/ \\
+https://scratch.mit.edu/projects/102933941/ \\
+\end{tabular}
+\end{center}
+\end{table}
 \\
-L39 メソッドgetFirstでは読み込んだプロジェクトで使用されているブロックごとの個数を数え、\ref{sbprog}の値の上書きを行う。ブロックの総個数を変数countと置く。L41のif文では組み込み関数isinstance()を使用しリストであるかを確認する。(\cite{isinstance}) 組み込み関数のisinstance()とは２つの引数を指定し、１つ目が２つ目のインスタンスであるかどうかを返す。また読み込んだデータリストLが長さ0より大きいリストであれば最初の値を変数firstと置く。L43のif文では同様にisinstance()を使用しリストのキーがUnicode文字列であれば処理を進める。Unicode文字列はバイト単位である通常の文字列に対して、文字型に構わず１文字を１文字として扱う。(\cite{unicode}) if文内では始めに対象データ内の例外処理を行う。\ref{sbprog}に記録されているブロック名に一致するように"turnRight:"、"turnLeft:"、"wait:elapsed:from:"の値より末尾のセミコロンを覗く。その際組み込み型のrstripを利用する。rstripはstr.rstripの引数で指定した文字もしくは文字集合を文字列の末尾から覗く。(\cite{rstrip}) L54ではdict内(\cite{sbprog}内の辞書）にfirstと一致するものがあればdictの値を１つ増やす。同時にcountを１つ増やす。L57ではデータリスト内の値をgetFirstの引数に繰り返し置くことで再帰メソッドにする。
+L39 メソッドgetFirstでは読み込んだプロジェクトで使用されているブロックごとの個数を数え、ソースコード\ref{sbprog}の値の上書きを行う。ブロックの総個数を変数countと置く。L41のif文では組み込み関数isinstance()を使用しリストであるかを確認する。(\cite{isinstance}) 組み込み関数のisinstance()とは２つの引数を指定し、１つ目が２つ目のインスタンスであるかどうかを返す。また読み込んだデータリストLが長さ0より大きいリストであれば最初の値を変数firstと置く。L43のif文では同様にisinstance()を使用しリストのキーがUnicode文字列であれば処理を進める。Unicode文字列はバイト単位である通常の文字列に対して、文字型に構わず１文字を１文字として扱う。(\cite{unicode}) if文内では始めに対象データ内の例外処理を行う。ソースコード\ref{sbprog}に記録されているブロック名に一致するように"turnRight:"、"turnLeft:"、"wait:elapsed:from:"の値より末尾のセミコロンを覗く。その際組み込み型のrstripを利用する。rstripはstr.rstripの引数で指定した文字もしくは文字集合を文字列の末尾から覗く。(\cite{rstrip}) L54ではdict内(\cite{sbprog}内の辞書）にfirstと一致するものがあればdictの値を１つ増やす。同時にcountを１つ増やす。L57ではデータリスト内の値をgetFirstの引数に繰り返し置くことで再帰メソッドにする。
 \\
-次にurllib2モジュールを使用し、Scratchプロジェクトを呼び出す。変数r1でurlを開き、r1.read()でファイルを読み出したものをjson.loadsを使用しjson型のデータをpythonオブジェクトへの脱直列化する。(\cite{loads})  root1より"children"を親とするリスト(y1)を取り出す。L77では取り出したリストy1の長さ分のfor文を作成する。事前に"scripts"を変数aとし（L70）、もしaが含まれていれば、使用されているブロックをL71で定義したリストs1に加える。s1はL99でgetFirstの引数に指定する。L98で\ref{sbprog}のキーであるblockをxと置く。次にcos類似度の計算をするためのベクターを作る。L106ではxをソートし、xxと置く。初期化したリスト（xxx）にはfor文でキーの値を取得し、書き込んでいく。
+次にurllib2モジュールを使用し、Scratchプロジェクトを呼び出す。変数r1でurlを開き、r1.read()でファイルを読み出したものをjson.loadsを使用しjson型のデータをpythonオブジェクトへの脱直列化する。(\cite{loads})  root1より"children"を親とするリスト(y1)を取り出す。L77では取り出したリストy1の長さ分のfor文を作成する。事前に"scripts"を変数aとし（L70）、もしaが含まれていれば、使用されているブロックをL71で定義したリストs1に加える。s1はL99でgetFirstの引数に指定する。L98でソースコード\ref{sbprog}のキーであるblockをxと置く。次にcos類似度の計算をするためのベクターを作る。L106ではxをソートし、xxと置く。初期化したリスト（xxx）にはfor文でキーの値を取得し、書き込んでいく。
 \\
 次にスプライト数を数える。L86ではスプライト数を数える変数splite\_count1を初期化する。L77のfor文と同様にリストの長さ分、"objName"を持つリストを探し存在すればsplite\_count1の数を１増やす。
 \\
 L116のfor文では始めに読み込んだcsvファイルに存在するデータURL分繰り返すことにする。ここでは最初に読み込んだプロジェクトと順番に比較していく新たなプロジェクトの計算を同様の方法で行う。for文の最後（L166）では作成したベクターリストxxxとyyyを使い、SimCalculatorより呼び出したメソッドsim\_cosで計算を行う。L176では結果を書き込むcsvファイルを作成する。L177の変数writecsvにwriter()メソッドを指定し、与えられたリストをcsv形式に変換し、返す。L185のbodyリストにはブロックの総数、スプライトの個数、cos類似度をいれ、csv書き込み用のリストcsvlistに格納。L190とL191でL178で指定したcsvの列のラベル名とL186のcsvlistをL176のファイルに書き込む。
+\begin{table}[h]
+ \caption{【例】結果が書き込まれたファイル}
+ \label{resultex}
+ \begin{center}
+\begin{tabular}{lclcl}
+block & splite & cos \\
+57 & 2 & 0.622501651 \\
+84 & 2 & 0.685970521 \\
+116 & 3 & 0.727309832 \\
+38 & 2 & 0.788050924 \\
+144 & 3 & 0.558885703 \\
+108 & 2 & 0.61049762 \\
+28 & 3 & 0.939108193 \\
+20 & 2 & 0.986013297 \\
+19 & 2 & 1 \\
+47 & 3 & 0.877613961 \\
+69 & 2 & 0.654319919 \\
+62 & 2 & 0.662733496 \\
+93 & 2 & 0.845819931 \\
+61 & 2 & 0.674736483 \\
+44 & 3 & 0.917117834 \\
+53 & 2 & 0.592156525 \\
+35 & 3 & 0.916030755 \\
+148 & 10 & 0.910134671 \\
+74 & 3 & 0.39669503 \\
+93 & 4 & 0.758264769 \\
+19 & 2 & 1 \\
+21 & 2 & 0.972597525 \\
+\end{tabular}
+\end{center}
+\end{table}
+
 
 %cos類似度を計算したいjsonプログラムをそれぞれA,Bとすると、A,Bの読み込みを行うとき、プログラムIDを設定することでネット上からプログラムを自動で呼び出せるようにした。プログラムAの中のブロック情報が書かれているchildrenの部分のみを取り出し(y1)、スプライトの数分足していくことで集計を行いたプログラム部分を一つの変数にまとめた(s1)。ここでスプライトの合計もカウントしている。これらの作業を行なった後、s1とブロックの辞書を呼び出した変数(x)を引数とし、getFirstを呼び出した。集計を行なった後、ソートを行い、ベクター表示させた(xxx)。プログラムBでも同じ動作を行う。ただし、上書きされた辞書を初期値の0に戻す作業を行なっている。それぞれのプログラムでベクター表示できたら、cos類似度を実際計算するSimCalculator.py\ref{scprog}を呼び出している。プログラムの最初と最後には、プログラムIDのデータファイルであるCSVファイルを開き、結果を出力するファイルを作成する動作が書かれている。
 
@@ -327,12 +387,39 @@ L116のfor文では始めに読み込んだcsvファイルに存在するデー�
 
 \subsection{ブロック数とcos類似度のグラフ}
 縦軸をcos類似度、横軸をブロック数の対数目盛りを用いて表した。xとyの値が(1,1)に近いほどデータでは類似している。
-\begin{figure}[!h]
-  \centering
-    \includegraphics[scale=0.5]{graph_first_block.pdf}
-  \caption{１段目のグラフ}
-  \label{}
+
+\begin{figure}[h]
+ \begin{tabular}{cc}
+ 	\begin{minipage}[t]{0.45\hsize}
+	 \centering
+	 \includegraphics[keepaspectratio, scale = 0.25]{graph_first_block.pdf}
+	 \caption{１段目のグラフ}
+	 \label{first_block}
+	\end{minipage}
+        \begin{minipage}[t]{0.45\hsize}
+	 \centering
+	 \includegraphics[keepaspectratio, scale = 0.25]{graph_second_block.pdf}
+	 \caption{２段目のグラフ}
+	 \label{second_block}
+	\end{minipage}
+ \end{tabular}
+  \begin{tabular}{cc}
+ 	\begin{minipage}[t]{0.45\hsize}
+	 \centering
+	 \includegraphics[keepaspectratio, scale = 0.25]{graph_third_block.pdf}
+	 \caption{３段目のグラフ}
+	 \label{third_block}
+	\end{minipage}
+        \begin{minipage}[t]{0.45\hsize}
+	 \centering
+	 \includegraphics[keepaspectratio, scale = 0.25]{graph_fourth_block.pdf}
+	 \caption{４段目のグラフ}
+	 \label{fourth_block}
+	\end{minipage}
+ \end{tabular}
  \end{figure}
+ 
+
 \subsubsection{１段目のグラフ}
 \begin{itemize}
 \item 最も似ているもの
@@ -344,15 +431,7 @@ L116のfor文では始めに読み込んだcsvファイルに存在するデー�
 \\https://scratch.mit.edu/projects/14377547/
 \end{itemize}
 
- 
-%\vspace{10mm}
-\begin{figure}
-  \centering
-    \includegraphics[scale=0.5]{graph_second_block.pdf}
-  \caption{２段目のグラフ}
-  \label{}
- \end{figure}
- \subsubsection{２段目のグラフ}
+\subsubsection{２段目のグラフ}
 \begin{itemize}
 \item 最も似ているもの
 \\https://scratch.mit.edu/projects/10630533/
@@ -363,13 +442,6 @@ L116のfor文では始めに読み込んだcsvファイルに存在するデー�
 \\https://scratch.mit.edu/projects/31314852/
 \end{itemize}
 
-\begin{figure}
-  \centering
-    \includegraphics[scale=0.5]{graph_third_block.pdf}
-  \caption{３段目のグラフ}
-  \label{}
- \end{figure}
- 
  \subsubsection{３段目のグラフ}
  \begin{itemize}
 \item 最も似ているもの
@@ -379,15 +451,6 @@ L116のfor文では始めに読み込んだcsvファイルに存在するデー�
 \item 中間
 \\https://scratch.mit.edu/projects/70556576/
 \end{itemize}
-
-
-\vspace{10mm}  
-\begin{figure}
-  \centering
-    \includegraphics[scale=0.5]{graph_fourth_block.pdf}
-  \caption{４段目のグラフ}
-  \label{}
-\end{figure}
 
 \subsubsection{４段目のグラフ}
 \begin{itemize}
@@ -400,17 +463,41 @@ L116のfor文では始めに読み込んだcsvファイルに存在するデー�
 \\https://scratch.mit.edu/projects/118943024/
 \end{itemize}
 
-
-\newpage
 \subsection{スプライト数とcos類似度のグラフ}
 縦軸をcos類似度、横軸をスプライト数の対数目盛りを用いて表した。同様にxとyの値が(1,1)に近いほどデータでは類似している。
-\begin{figure}[!h]
-  \centering
-    \includegraphics[scale=0.5]{graph_first_splite.pdf}
-  \caption{１段目のグラフ}
-  \label{}
+
+\begin{figure}[h]
+ \begin{tabular}{cc}
+ 	\begin{minipage}[t]{0.45\hsize}
+	 \centering
+	 \includegraphics[keepaspectratio, scale = 0.25]{graph_first_splite.pdf}
+	 \caption{１段目のグラフ}
+	 \label{first_splite}
+	\end{minipage}
+        \begin{minipage}[t]{0.45\hsize}
+	 \centering
+	 \includegraphics[keepaspectratio, scale = 0.25]{graph_second_splite.pdf}
+	 \caption{２段目のグラフ}
+	 \label{second_splite}
+	\end{minipage}
+ \end{tabular}
+  \begin{tabular}{cc}
+ 	\begin{minipage}[t]{0.45\hsize}
+	 \centering
+	 \includegraphics[keepaspectratio, scale = 0.25]{graph_third_splite.pdf}
+	 \caption{３段目のグラフ}
+	 \label{third_splite}
+	\end{minipage}
+        \begin{minipage}[t]{0.45\hsize}
+	 \centering
+	 \includegraphics[keepaspectratio, scale = 0.25]{graph_fourth_splite.pdf}
+	 \caption{４段目のグラフ}
+	 \label{fourth_splite}
+	\end{minipage}
+ \end{tabular}
  \end{figure}
- 
+
+
  \subsubsection{１段目のグラフ}
 \begin{itemize}
 \item 最も似ているもの
@@ -422,16 +509,7 @@ L116のfor文では始めに読み込んだcsvファイルに存在するデー�
 \\https://scratch.mit.edu/projects/90709078/
 \end{itemize}
 
-
-% \vspace{10mm}  
- \begin{figure}
-  \centering
-    \includegraphics[scale=0.5]{graph_second_splite.pdf}
-  \caption{２段目のグラフ}
-  \label{}
- \end{figure}
- 
-  \subsubsection{２段目のグラフ}
+\subsubsection{２段目のグラフ}
  \begin{itemize}
 \item 最も似ているもの
 \\https://scratch.mit.edu/projects/10630533/
@@ -442,14 +520,6 @@ L116のfor文では始めに読み込んだcsvファイルに存在するデー�
 \\https://scratch.mit.edu/projects/70556576/
 \end{itemize}
 
-  
-\begin{figure}
-  \centering
-    \includegraphics[scale=0.5]{graph_third_splite.pdf}
-  \caption{３段目のグラフ}
-  \label{}
- \end{figure}
- 
 \subsubsection{３段目のグラフ}
 \begin{itemize}
 \item 最も似ているもの
@@ -459,14 +529,6 @@ L116のfor文では始めに読み込んだcsvファイルに存在するデー�
 \item 中間
 \\https://scratch.mit.edu/projects/33903574/
 \end{itemize}
-
- 
-\begin{figure}
-  \centering
-    \includegraphics[scale=0.5]{graph_fourth_splite.pdf}
-  \caption{４段目のグラフ}
-  \label{}
- \end{figure}
  
  \subsubsection{４段目のグラフ}
  \begin{itemize}
@@ -480,24 +542,6 @@ L116のfor文では始めに読み込んだcsvファイルに存在するデー�
 \end{itemize}
 
 
-
-
-\newpage
-\subsection{ブロック数とスプライト数を重ねたグラフ}
-１段目のグラフに２、３、４段目のプロットの色を薄くしたものを重ねた。
- \begin{figure}[!h]
-  \centering
-    \includegraphics[scale=0.3]{fourgraph_block.pdf}
-  \caption{左上１段目、右上１段目と２段目、左下１段目と３段目、右下１段目と４段目}
-  \label{}
- \end{figure}
- 
- \begin{figure}
-  \centering
-    \includegraphics[scale=0.3]{fourgraph_splite.pdf}
-  \caption{左上１段目、右上１段目と２段目、左下１段目と３段目、右下１段目と４段目}
-  \label{}
- \end{figure}
 
 \chapter{評価}
 \section{自己評価}

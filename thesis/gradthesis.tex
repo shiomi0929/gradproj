@@ -404,21 +404,21 @@ block & splite & cos \\
 \part{結論}
 \chapter{結果}
 \section{実験結果}
-出力されたデータを用いて散布図に表した。縦軸にcos類似度の値、横軸に出力されたブロック数（スプライト数）を元のプログラム（"Pong Starter"、ID:10000036）の数値で割った値の対数値でとる。数値では（1,1）が最も類似しているプロジェクトであるため似ているものから青、赤、緑、紫、水色で色を区別してプロットをする。
 
-\subsection{ブロック数とcos類似度のグラフ}
+\subsection{ブロック数とスプライト数の散布図}
+出力されたデータを元に横軸がブロック数、縦軸がスプライト数の散布図を作成した。基準を１にするため、ブロック数を元のプロジェクト（ID:10000036）の１９個で割り、スプライト数を２で割った。４つの比較ができるように、目盛りは全ての最大値に揃えた。
 
 \begin{figure}[h]
  \begin{tabular}{cc}
  	\begin{minipage}[t]{0.45\hsize}
 	 \centering
-	 \includegraphics[keepaspectratio, scale = 0.25]{graph_first_block.pdf}
+	 \includegraphics[keepaspectratio, scale = 0.25]{block_splite_1.pdf}
 	 \caption{１段目のグラフ}
 	 \label{first_block}
 	\end{minipage}
         \begin{minipage}[t]{0.45\hsize}
 	 \centering
-	 \includegraphics[keepaspectratio, scale = 0.25]{graph_second_block.pdf}
+	 \includegraphics[keepaspectratio, scale = 0.25]{block_splite_2.pdf}
 	 \caption{２段目のグラフ}
 	 \label{second_block}
 	\end{minipage}
@@ -426,76 +426,34 @@ block & splite & cos \\
   \begin{tabular}{cc}
  	\begin{minipage}[t]{0.45\hsize}
 	 \centering
-	 \includegraphics[keepaspectratio, scale = 0.25]{graph_third_block.pdf}
+	 \includegraphics[keepaspectratio, scale = 0.25]{block_splite_3.pdf}
 	 \caption{３段目のグラフ}
 	 \label{third_block}
 	\end{minipage}
         \begin{minipage}[t]{0.45\hsize}
 	 \centering
-	 \includegraphics[keepaspectratio, scale = 0.25]{graph_fourth_block.pdf}
+	 \includegraphics[keepaspectratio, scale = 0.25]{block_splite_4.pdf}
 	 \caption{４段目のグラフ}
 	 \label{fourth_block}
 	\end{minipage}
  \end{tabular}
  \end{figure}
- 
 
-\subsubsection{１段目のグラフ}
-\begin{itemize}
-\item 最も似ているもの
-\\https://scratch.mit.edu/projects/48772890/
-\\https://scratch.mit.edu/projects/136740878/
-\item 最も離れているもの
-\\https://scratch.mit.edu/projects/19276295/
-\item 中間
-\\https://scratch.mit.edu/projects/14377547/
-\end{itemize}
-
-\subsubsection{２段目のグラフ}
-\begin{itemize}
-\item 最も似ているもの
-\\https://scratch.mit.edu/projects/10630533/
-\\https://scratch.mit.edu/projects/20087979/
-\item 最も離れているもの
-\\https://scratch.mit.edu/projects/73001742/
-\item 中間
-\\https://scratch.mit.edu/projects/31314852/
-\end{itemize}
-
- \subsubsection{３段目のグラフ}
- \begin{itemize}
-\item 最も似ているもの
-\\https://scratch.mit.edu/projects/97570310/
-\item 最も離れているもの
-\\https://scratch.mit.edu/projects/71289464/
-\item 中間
-\\https://scratch.mit.edu/projects/70556576/
-\end{itemize}
-
-\subsubsection{４段目のグラフ}
-\begin{itemize}
-\item 最も似ているもの
-\\https://scratch.mit.edu/projects/11534736/
-\\https://scratch.mit.edu/projects/23516253/
-\item 最も離れているもの
-\\https://scratch.mit.edu/projects/44740270/
-\item 中間
-\\https://scratch.mit.edu/projects/118943024/
-\end{itemize}
-
-\subsection{スプライト数とcos類似度のグラフ}
+\newpage
+ \subsection{スプライト数あたりのブロック数とcos類似度の散布図}
+出力されたデータを元にブロック数をスプライト数で割り、その値とcos類似度の散布図を作成した。４つの比較ができるように、目盛りは全ての最大値に揃えた。
 
 \begin{figure}[h]
  \begin{tabular}{cc}
  	\begin{minipage}[t]{0.45\hsize}
 	 \centering
-	 \includegraphics[keepaspectratio, scale = 0.25]{graph_first_splite.pdf}
+	 \includegraphics[keepaspectratio, scale = 0.25]{block_per_splite_1.pdf}
 	 \caption{１段目のグラフ}
 	 \label{first_splite}
 	\end{minipage}
         \begin{minipage}[t]{0.45\hsize}
 	 \centering
-	 \includegraphics[keepaspectratio, scale = 0.25]{graph_second_splite.pdf}
+	 \includegraphics[keepaspectratio, scale = 0.25]{block_per_splite_2.pdf}
 	 \caption{２段目のグラフ}
 	 \label{second_splite}
 	\end{minipage}
@@ -503,71 +461,165 @@ block & splite & cos \\
   \begin{tabular}{cc}
  	\begin{minipage}[t]{0.45\hsize}
 	 \centering
-	 \includegraphics[keepaspectratio, scale = 0.25]{graph_third_splite.pdf}
+	 \includegraphics[keepaspectratio, scale = 0.25]{block_per_splite_3.pdf}
 	 \caption{３段目のグラフ}
 	 \label{third_splite}
 	\end{minipage}
         \begin{minipage}[t]{0.45\hsize}
 	 \centering
-	 \includegraphics[keepaspectratio, scale = 0.25]{graph_fourth_splite.pdf}
+	 \includegraphics[keepaspectratio, scale = 0.25]{block_per_splite_4.pdf}
 	 \caption{４段目のグラフ}
 	 \label{fourth_splite}
 	\end{minipage}
  \end{tabular}
  \end{figure}
 
+\newpage
+\subsection{ブロック数とcos類似度の散布図}
+ 出力されたデータを元に横軸がブロック数、縦軸がcos類似度の散布図を作成した。ブロック数は１９で割ったあと１０の対数を目盛りにした。４つの比較ができるように、目盛りは全ての最大値に揃えた。
 
- \subsubsection{１段目のグラフ}
-\begin{itemize}
-\item 最も似ているもの
-\\https://scratch.mit.edu/projects/48772890/ 
-\\https://scratch.mit.edu/projects/136740878/
-\item 最も離れているもの
-\\https://scratch.mit.edu/projects/19276295/
-\item 中間
-\\https://scratch.mit.edu/projects/90709078/
-\end{itemize}
+\begin{figure}[h]
+ \begin{tabular}{cc}
+ 	\begin{minipage}[t]{0.45\hsize}
+	 \centering
+	 \includegraphics[keepaspectratio, scale = 0.25]{graph_1_block.pdf}
+	 \caption{１段目のグラフ}
+	 \label{first_block}
+	\end{minipage}
+        \begin{minipage}[t]{0.45\hsize}
+	 \centering
+	 \includegraphics[keepaspectratio, scale = 0.25]{graph_2_block.pdf}
+	 \caption{２段目のグラフ}
+	 \label{second_block}
+	\end{minipage}
+ \end{tabular}
+  \begin{tabular}{cc}
+ 	\begin{minipage}[t]{0.45\hsize}
+	 \centering
+	 \includegraphics[keepaspectratio, scale = 0.25]{graph_3_block.pdf}
+	 \caption{３段目のグラフ}
+	 \label{third_block}
+	\end{minipage}
+        \begin{minipage}[t]{0.45\hsize}
+	 \centering
+	 \includegraphics[keepaspectratio, scale = 0.25]{graph_4_block.pdf}
+	 \caption{４段目のグラフ}
+	 \label{fourth_block}
+	\end{minipage}
+ \end{tabular}
+ \end{figure}
 
-\subsubsection{２段目のグラフ}
- \begin{itemize}
-\item 最も似ているもの
-\\https://scratch.mit.edu/projects/10630533/
-\\https://scratch.mit.edu/projects/20087979/
-\item 最も離れているもの
-\\https://scratch.mit.edu/projects/73001742/
-\item 中間
-\\https://scratch.mit.edu/projects/70556576/
-\end{itemize}
+\newpage
+\subsection{スプライト数とcos類似度の散布図}
+ 出力されたデータを元に横軸がスプライト数、縦軸がcos類似度の散布図を作成した。ブロック数は２で割ったあと１０の対数を目盛りにした。４つの比較ができるように、目盛りは全ての最大値に揃えた。
 
-\subsubsection{３段目のグラフ}
-\begin{itemize}
-\item 最も似ているもの
-\\https://scratch.mit.edu/projects/97570310/
-\item 最も離れているもの
-\\https://scratch.mit.edu/projects/71289464/
-\item 中間
-\\https://scratch.mit.edu/projects/33903574/
-\end{itemize}
+\begin{figure}[h]
+ \begin{tabular}{cc}
+ 	\begin{minipage}[t]{0.45\hsize}
+	 \centering
+	 \includegraphics[keepaspectratio, scale = 0.25]{graph_1_splite.pdf}
+	 \caption{１段目のグラフ}
+	 \label{first_splite}
+	\end{minipage}
+        \begin{minipage}[t]{0.45\hsize}
+	 \centering
+	 \includegraphics[keepaspectratio, scale = 0.25]{graph_2_splite.pdf}
+	 \caption{２段目のグラフ}
+	 \label{second_splite}
+	\end{minipage}
+ \end{tabular}
+  \begin{tabular}{cc}
+ 	\begin{minipage}[t]{0.45\hsize}
+	 \centering
+	 \includegraphics[keepaspectratio, scale = 0.25]{graph_3_splite.pdf}
+	 \caption{３段目のグラフ}
+	 \label{third_splite}
+	\end{minipage}
+        \begin{minipage}[t]{0.45\hsize}
+	 \centering
+	 \includegraphics[keepaspectratio, scale = 0.25]{graph_4_splite.pdf}
+	 \caption{４段目のグラフ}
+	 \label{fourth_splite}
+	\end{minipage}
+ \end{tabular}
+ \end{figure}
  
- \subsubsection{４段目のグラフ}
- \begin{itemize}
-\item 最も似ているもの
-\\https://scratch.mit.edu/projects/11534736/
-\\https://scratch.mit.edu/projects/23516253/
-\item 最も離れているもの
-\\https://scratch.mit.edu/projects/44740270/
-\item 中間
-\\https://scratch.mit.edu/projects/134337312/
-\end{itemize}
+\newpage
+\subsection{ブロック数とcos類似度の個数によるカラープロット}
+出力されたデータを元に同じデータの個数の集計を行い、その個数を色の濃淡で表した。ブロック数は１９で割り、４つのグラフを比較するため、目盛り数を最大値に揃えた。
 
-
+\begin{figure}[h]
+ \begin{tabular}{cc}
+ 	\begin{minipage}[t]{0.45\hsize}
+	 \centering
+	 \includegraphics[keepaspectratio, scale = 0.35]{colormap_block_1.pdf}
+	 \caption{１段目のグラフ}
+	 \label{first_block}
+	\end{minipage}
+        \begin{minipage}[t]{0.45\hsize}
+	 \centering
+	 \includegraphics[keepaspectratio, scale = 0.35]{colormap_block_2.pdf}
+	 \caption{２段目のグラフ}
+	 \label{second_block}
+	\end{minipage}
+ \end{tabular}
+  \begin{tabular}{cc}
+ 	\begin{minipage}[t]{0.45\hsize}
+	 \centering
+	 \includegraphics[keepaspectratio, scale = 0.35]{colormap_block_3.pdf}
+	 \caption{３段目のグラフ}
+	 \label{third_block}
+	\end{minipage}
+        \begin{minipage}[t]{0.45\hsize}
+	 \centering
+	 \includegraphics[keepaspectratio, scale = 0.35]{colormap_block_4.pdf}
+	 \caption{４段目のグラフ}
+	 \label{fourth_block}
+	\end{minipage}
+ \end{tabular}
+ \end{figure}
+  
+\newpage
+ \subsection{スプライト数とcos類似度の個数によるカラープロット}
+出力されたデータを元に同じデータの個数の集計を行い、その個数を色の濃淡で表した。スプライト数は２で割り、４つのグラフを比較するため、目盛り数を最大値に揃えた。 
+ 
+\begin{figure}[h]
+ \begin{tabular}{cc}
+ 	\begin{minipage}[t]{0.45\hsize}
+	 \centering
+	 \includegraphics[keepaspectratio, scale = 0.35]{colormap_splite_1.pdf}
+	 \caption{１段目のグラフ}
+	 \label{first_block}
+	\end{minipage}
+        \begin{minipage}[t]{0.45\hsize}
+	 \centering
+	 \includegraphics[keepaspectratio, scale = 0.35]{colormap_splite_2.pdf}
+	 \caption{２段目のグラフ}
+	 \label{second_block}
+	\end{minipage}
+ \end{tabular}
+  \begin{tabular}{cc}
+ 	\begin{minipage}[t]{0.45\hsize}
+	 \centering
+	 \includegraphics[keepaspectratio, scale = 0.35]{colormap_splite_3.pdf}
+	 \caption{３段目のグラフ}
+	 \label{third_block}
+	\end{minipage}
+        \begin{minipage}[t]{0.45\hsize}
+	 \centering
+	 \includegraphics[keepaspectratio, scale = 0.35]{colormap_splite_4.pdf}
+	 \caption{４段目のグラフ}
+	 \label{fourth_block}
+	\end{minipage}
+ \end{tabular}
+ \end{figure}
 
 \chapter{評価}
 
 \section{類似研究者}
 \subsection{来住伸子教授}
 \section{自己評価}
-前章で得られた合計12個のプロジェクトと元のプロジェクト（ID:10000036）を、操作・音・外装・プログラムの動き・ブロックの木構造・ゲーム終了時の6つの項目で比較し、可視化した結果が正しいかどうか検証した。（表\ref{block}）（表\ref{splite}）IDは色分けされており、赤が元プロジェクトと距離が近いもの、青が遠いもの、ピンクが中間のものを指す。距離が近いものはプロジェクトの数が多かったため、2個ピックアップしている。
+作成したグラフより、最も似ている数値のプロジェクト、最も離れている数値のプロジェクト、その中間のものを選び抜いた。最も似ているものは(1,1)にあるものが元のプロジェクトに最も近いものと判断する。１段目、２段目、４段目では(1,1)のプロジェクトが多く存在するため、その中から２つに絞る。これらのプロジェクトと元のプロジェクト（ID:10000036）を、操作・音・外装・プログラムの動き・ブロックの木構造・ゲーム終了時の6つの項目で比較し、可視化した結果が正しいかどうか検証した。（表\ref{block}）（表\ref{splite}）IDは色分けされており、赤が元プロジェクトと距離が近いもの、青が遠いもの、ピンクが中間のものを指す。
 \\
 　ブロック数とcos類似度のグラフ、スプライト数とcos類似度のグラフどちらにおいても同じような結果が出ており、それぞれの段で最も似ているもの・最も離れているもの・中間という条件で取り出したプロジェクトは、やはりよく似ている・違う・少し違う内容となっていた。よって、今回使用したブロック数・スプライト数・類似度はプロジェクト同士の類似度を図る上で重要な要素であったと言える。
 \\
@@ -576,29 +628,6 @@ block & splite & cos \\
 　この可視化がツール上に加わることで、それぞれの生徒がどの程度自分のアイデアでプロジェクトを作成できているか、もしくはできていないのかという新たな情報を提供でき、教育者として個々の生徒の進度を把握する一つの手助けになるのではないかと考えている。
 \\
 　ブロック数とcos類似度のグラフ、スプライト数とcos類似度のグラフの表の中で、どの段においても最も似ているもの・最も離れているものはどれも共通したプロジェクトが得られたが、中間にあたるプロジェクトがどの段においても異なるという結果となった。これは、類似性を表す上で使用したブロック数とスプライト数の2つの要素によって、中間と位置付けるプロジェクトが異なったということである。本研究では2要素ごとに可視化を行ったため、このような誤差が出てしまったが、今後3次元で可視化を試みることで、改善できるのではないかと考えている。
-\\
-\\
-\\
-%%%図バージョン
-% \begin{figure}[!h]
-%  \centering
-   %\includegraphics[scale=0.4]{block1.pdf}
-   %\includegraphics[scale=0.4]{block2.pdf}
-   %\includegraphics[scale=0.4]{block3.pdf}
-   %\includegraphics[scale=0.4]{block4.pdf}
-  %\caption{ブロック数とcos類似度のグラフの評価}
-  %\label{block}
- %\end{figure}
- 
- %\begin{figure}[!h]
-  %\centering
-  % \includegraphics[scale=0.4]{splite1.pdf}
-   %\includegraphics[scale=0.4]{splite2.pdf}
-   %\includegraphics[scale=0.4]{splite3.pdf}
-   %\includegraphics[scale=0.4]{splite4.pdf}
-  %\caption{スプライト数とcos類似度のグラフの評価}
-  %\label{splite}
-% \end{figure}
 
 \begin{table}[h]
  \scriptsize
@@ -657,7 +686,7 @@ block & splite & cos \\
 
 3段目 &  &  &  &  &  &  \\ \hline
 \textcolor{red}{97570310} & 同じ & なし & 背景・ボール & 同じ & 同じ & 同じ \\ \hline
-\textcolor{blue}{71289464} & なくなる & なし & 背景・ボール・ポイント３種 & ボールが勝手に動着続ける & 違う & 終了しない \\
+\textcolor{blue}{71289464} & なくなる & なし & 背景・ボール・ポイント３種 & ボールが勝手に動着続ける & 違う & 終了しない \\ \hline
 \textcolor{magenta}{33903574} & 同じ & 新たな音が追加 & 背景・ボールの色・バーの色 & スコア付き & 違う & ゲーム終了時に音が鳴る \\ \hline
 
 4段目 &  &  &  &  &  &  \\ \hline

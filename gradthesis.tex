@@ -146,6 +146,13 @@ Scratchでは全世界のユーザーのうち日本でのユーザーは現状�
 
 本研究ではScratchで公開されているプログラム、統計データを利用して分析、実験を実施する。その中でも公開データであるリミックスツリーの精度を検証し、実際に使い易いデータの可視化であるかどうかを評価する。その結果を用いてプログラミング教育における課題点を解決を目指す。
 
+\chapter{先行研究}
+\section{先行研究1}
+\subsection{概要}
+\subsection{評価}
+\section{先行研究2}
+\subsection{概要}
+\subsection{評価}
 %\section{本論文の構成}
 
 
@@ -568,6 +575,7 @@ block & splite & cos \\
 \\
 \\
 \\
+%%%図バージョン
 % \begin{figure}[!h]
 %  \centering
    %\includegraphics[scale=0.4]{block1.pdf}
@@ -578,15 +586,15 @@ block & splite & cos \\
   %\label{block}
  %\end{figure}
  
- \begin{figure}[!h]
-  \centering
-   \includegraphics[scale=0.4]{splite1.pdf}
-   \includegraphics[scale=0.4]{splite2.pdf}
-   \includegraphics[scale=0.4]{splite3.pdf}
-   \includegraphics[scale=0.4]{splite4.pdf}
-  \caption{スプライト数とcos類似度のグラフの評価}
-  \label{splite}
- \end{figure}
+ %\begin{figure}[!h]
+  %\centering
+  % \includegraphics[scale=0.4]{splite1.pdf}
+   %\includegraphics[scale=0.4]{splite2.pdf}
+   %\includegraphics[scale=0.4]{splite3.pdf}
+   %\includegraphics[scale=0.4]{splite4.pdf}
+  %\caption{スプライト数とcos類似度のグラフの評価}
+  %\label{splite}
+% \end{figure}
 
 \begin{table}[h]
  \scriptsize
@@ -623,11 +631,42 @@ block & splite & cos \\
 \end{center}
 \end{table}
 
+\begin{table}[h]
+ \scriptsize
+ \caption{スプライト数とcos類似度のグラフの評価}
+ \label{splite}
+ \begin{center}
+\begin{tabular}{|p{1.7cm}||p{1cm}|p{1cm}|p{1.7cm}|p{2cm}|p{1cm}|p{1.7cm}|} \hline
+
+プロジェクトID & 操作 & 音 & 外装 & プログラムの動き & 木構造 & ゲーム終了時 \\ \hline \hline
+1段目 &  &  &  &  &  &  \\ \hline
+\textcolor{red}{48772890} & 同じ & 同じ & ボールの色だけ & バーが上下にも動く & 同じ & 同じ \\ \hline
+\textcolor{red}{136740878} & 同じ & なくなる & 背景だけ & 同じ & 同じ & 同じ \\ \hline
+\textcolor{blue}{19276295} & 同じ & 同じ & 背景・ボールの大きさ & ボールに触れたら負け、コウモリを跳ね返してボールが下に落ちないようにする & 違う & 負けても終わらない \\ \hline
+\textcolor{magenta}{90709078} & 同じ & 同じ & ボール・バーが複数・ポイント3種 & 複数のボールが一斉に動く & 違う & 同じ \\ \hline
+
+2段目 &  &  &  &  &  &  \\ \hline
+\textcolor{red}{10630533} & 同じ & 違う & 背景・ボール・バー & 同じ & ほぼ同じ & 同じ \\ \hline
+\textcolor{red}{20087979} & 同じ & 違う & 背景・ボール・バー & 同じ & ほぼ同じ & 音が鳴り、もう一度動き始める \\ \hline
+\textcolor{blue}{73001742} & なくなる & 違う & ボールが複数・バーも２種類 & ボールが同時にたくさん動き、ユーザがバーを動かせないようになっている & ほぼ同じ & なし \\ \hline
+\textcolor{magenta}{70556576} & なくなる & なくなる & 背景、ボール & 全く動かない & 少し違う & ゲームが始まらない \\ \hline
+
+3段目 &  &  &  &  &  &  \\ \hline
+\textcolor{red}{97570310} & 同じ & なし & 背景・ボール & 同じ & 同じ & 同じ \\ \hline
+\textcolor{blue}{71289464} & なくなる & なし & 背景・ボール・ポイント３種 & ボールが勝手に動着続ける & 違う & 終了しない \\
+\textcolor{magenta}{33903574} & 同じ & 新たな音が追加 & 背景・ボールの色・バーの色 & スコア付き & 違う & ゲーム終了時に音が鳴る \\ \hline
+
+4段目 &  &  &  &  &  &  \\ \hline
+\textcolor{red}{11534736} & 同じ & 同じ & 背景・ボール & 同じ & 同じ & 同じ \\ \hline
+\textcolor{red}{23516253} & 同じ & 違う & 背景・ボール & 同じ & 同じ & 跳ね返り続けられる \\ \hline
+\textcolor{blue}{44740270} & なくなる & なし & 背景・ボール・ポイント & なくなる & 少し違う & なくなる \\ \hline
+\textcolor{magenta}{134337312} & なくなる & なし & 背景 & なくなる & 違う & ゲームが始まらない \\ \hline
+
+\end{tabular}
+\end{center}
+\end{table}
 
 
-
-\chapter{結論}
-\section{結論}
 
 %
 %%% 謝辞

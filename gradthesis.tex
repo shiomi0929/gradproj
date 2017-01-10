@@ -74,17 +74,12 @@
 \begin{flushright}
 {\large
 指導教員：来住伸子　教授 \\ % 主査
-%副査：□□□□　教授              % 副査
 }
 \end{flushright}
 
 \begin{center}
 \vspace{150truept}
 {\huge Scratchプログラムの可視化による類似度推定}\\ % タイトル
-%{\huge 可視化によるScratchプログラムの理解支援}\\ % タイトル
-
-%\vspace{10truept}
-%{\Large subtitle}\\ % サブタイトル（なければコメントアウト）
 
 \vspace{80truept}
 {\huge 津田塾大学 学芸学部 情報科学科}\\
@@ -98,7 +93,7 @@
 \end{titlepage}
 
 \frontmatter
-\begin{abstract} %論文要旨
+\begin{abstract}
 \subsubsection{概要}
 近年プログラミング教育が推進され、学校での義務教育化が進んでいる。プログラミング教育の方法の1つとして挙げられているのが、米国マサチューセッツ工科大学のメディアラボが開発したScratchである。これは、無償で提供されているグラフィックプログラミング環境を指し、プログラミングを行う際の命令をブロックを組み合わせることで作り上げる。初心者にとっては使いやすい構造となっているため米国では利用者が増えているものの、日本のユーザーは全体の1\%にも満たない。そこで実際に本ツールで公表されているデータを利用して、より教育現場で用いられるようなツールを目指すためにデータ解析を行う。
 本ツールではすでに
@@ -110,16 +105,12 @@
 従って本研究では1つのプログラムで使用されているブロックを解析し結果を出力すると同時に引用元との比較を行い、類似性を導き出す。
 \end{abstract}
 
-%%% 目次
 \tableofcontents
-%
-%
-\mainmatter
-%
-%%% 本文ここから
 
-\part{序論} %3部構成を取る必要がない場合もあります
-\chapter{はじめに}
+\mainmatter
+
+
+\part{序論} \chapter{はじめに}
 \section{本研究の背景}
 
 2006年に開発されたScratchというビジュアルプログラミング環境がある。本研究ではScratchのデータを用いて教育の場で役立てる方法を導き出す。Scratchとは米国マサチューセッツ工科大学のメディアラボが開発したフリーツールであり、キーボードでコードを打つのではなくパズルのようにブロックを組み合わせてプログラムの完成させる。
@@ -143,42 +134,17 @@ Scratchでは全世界のユーザーのうち日本でのユーザーは現状�
 
 \newpage
 \section{本研究の目的}
-
 本研究ではScratchで公開されているプログラム、統計データを利用して分析、実験を実施する。その中でも公開データであるリミックスツリーの精度を検証し、実際に使い易いデータの可視化であるかどうかを評価する。その結果を用いてプログラミング教育における課題点を解決を目指す。
 
-<<<<<<< HEAD
-
-\lstset{
-    language=Python,%プログラミング言語によって変える。
-    numbers = left,
-    numberstyle = \scriptsize,
-    numbersep = 10pt,
-    breaklines = true,
-    breakindent = 40pt,
-    frame = shadowbox,
-    %frameround = ffft,
-    framesep = 3pt,
-    rulesep = 1pt,
-    %rulecolor = {\color{black}},
-    %rulesepcolor = {\color{black}},
-    flexiblecolumns = true,
-    keepspaces = false,
-    basicstyle = \scriptsize,
-    identifierstyle = \itshape\scriptsize,
-    commentstyle = \fontfamily{ptm}\selectfont\scriptsize,
-    stringstyle = \scshape\scriptsize,
-    tabsize = 3, 
- }
-=======
 \chapter{先行研究}
 \section{先行研究1}
 \subsection{概要}
 \subsection{評価}
 \section{先行研究2}
 \subsection{概要}
+Scratchプログラム間の類似度を数字で表す方法を知るため、2011年度の神戸市立工業高等専門学校電子工学科よりPascal言語のプログラムを利用し類似性を定量化する研究を参考にする。先行研究では学校の課題で提出される学生のプログラムは似た動きをするためほとんど同じのことが多いため類似性を機械的に抽出ができるのではないかと仮定している。類似度の計算を新しく提案したカーネル法を基にして算出し、実際の結果をクラスタに分けどのような特徴を持つ手法であるかを調査している。\cite{preEssay2}
 \subsection{評価}
-%\section{本論文の構成}
->>>>>>> 56d249ccda2d13af5d4fe34aedf1583e6c7667c9
+本研究と先行研究では題材であるプログラムの形が違うが、Scratchプログラムでは要素同士がリスト化されているJSON形式であるため類似度の計算手法を別のものに変更して行えると考える。またクラスタが可視化されたグラフが先行研究である様に本研究でも可視化をすることでScratch公式サイトにて公表されているグラフィックを上回る結果を目標とする。
 
 
 \part{本論}
@@ -707,6 +673,8 @@ block & splite & cos \\
 %\bibitem{a} \lceil title \rfloor, \langle url \rangle, xxxx/xx/xxアクセス
 \bibitem{it_edu}教育・学習分野の情報化に係る国内外の動向と先進事例, 総務省 http://www.kknews.co.jp/maruti/news/2014/0804\_4a.html
 \bibitem{edu_prog}小学校でプログラミング　アイデアを形にする力をつける (2014年8月4日), 教育課程新聞 http://www.kknews.co.jp/maruti/news/2014/0804\_4a.html
+
+\bibitem{preEssay2}小田悠介、若林茂(2013年) 「プログラム間の類似性の定量化手法」,[online]http://www.kobe-kosen.ac.jp/activity/publication/kiyou/Kiyou12/Data/Vol51Paper103-108.pdf
 \bibitem{scratch}Scratch - Imagine, Program, Share, MIT Media Lab https://scratch.mit.edu/
 \bibitem{scratch_official}Scratch Offline Editor, MIT Media Lab https://scratch.mit.edu/scratch2download/
 \bibitem{scratch_article}Scratchで始めるプログラミング教育（１）：プログラミングを学習する意義、Scratchの基本的な使い方超入門 (2016年3月21日), 薬師寺国安 http://www.atmarkit.co.jp/ait/articles/1603/21/news012.html

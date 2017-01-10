@@ -3,38 +3,18 @@
 % パッケージの設定，これは不要なものもあるかもしれない
 \usepackage{amsmath,amssymb}
 \usepackage{bm}
-\usepackage{epsbox}
-\usepackage[dvipdfmx]{graphicx}
+
 \usepackage{verbatim}
 \usepackage{wrapfig}
 \usepackage{ascmac}
 \usepackage{makeidx}
+
+\usepackage{epsbox}
 \usepackage[dvipdfmx]{graphicx}
 
 \usepackage{listings, jlisting}
 \usepackage{color}
  
-\lstset{
-    language=Python,%プログラミング言語によって変える。
-    numbers = left,
-    numberstyle = {\tiny \emph},
-    numbersep = 10pt,
-    breaklines = true,
-    breakindent = 40pt,
-    frame = tlRB,
-    frameround = ffft,
-    framesep = 3pt,
-    rulesep = 1pt,
-    rulecolor = {\color{black}},
-    rulesepcolor = {\color{black}},
-    flexiblecolumns = true,
-    keepspaces = false,
-    basicstyle = \scriptsize,
-    identifierstyle = \itshape\scriptsize,
-    commentstyle = \fontfamily{ptm}\selectfont\scriptsize,
-    stringstyle = \scshape\scriptsize,
-    tabsize = 4, 
- }
 
 \makeindex
 %%% 余白・文字数調整(左37mm, 右18mm, 上下共30mm, 文字数約40字/行, 行数約32行)
@@ -99,7 +79,7 @@
 
 \frontmatter
 \begin{abstract} %論文要旨
-\subsubsection{概論}
+\subsubsection{概要}
 近年プログラミング教育が推進され、学校での義務教育化が進んでいる。プログラミング教育の方法の1つとして挙げられているのが、米国マサチューセッツ工科大学のメディアラボが開発したScratchである。これは、無償で提供されているグラフィックプログラミング環境を指し、プログラミングを行う際の命令をブロックを組み合わせることで作り上げる。初心者にとっては使いやすい構造となっているため米国では利用者が増えているものの、日本のユーザーは全体の1\%にも満たない。そこで実際に本ツールで公表されているデータを利用して、より教育現場で用いられるようなツールを目指すためにデータ解析を行う。
 本ツールではすでに
 \begin{enumerate}
@@ -146,12 +126,31 @@ Scratchでは全世界のユーザーのうち日本でのユーザーは現状�
 
 本研究ではScratchで公開されているプログラム、統計データを利用して分析、実験を実施する。その中でも公開データであるリミックスツリーの精度を検証し、実際に使い易いデータの可視化であるかどうかを評価する。その結果を用いてプログラミング教育における課題点を解決を目指す。
 
-%\section{本論文の構成}
+
+\lstset{
+    language=Python,%プログラミング言語によって変える。
+    numbers = left,
+    numberstyle = \scriptsize,
+    numbersep = 10pt,
+    breaklines = true,
+    breakindent = 40pt,
+    frame = shadowbox,
+    %frameround = ffft,
+    framesep = 3pt,
+    rulesep = 1pt,
+    %rulecolor = {\color{black}},
+    %rulesepcolor = {\color{black}},
+    flexiblecolumns = true,
+    keepspaces = false,
+    basicstyle = \scriptsize,
+    identifierstyle = \itshape\scriptsize,
+    commentstyle = \fontfamily{ptm}\selectfont\scriptsize,
+    stringstyle = \scshape\scriptsize,
+    tabsize = 3, 
+ }
 
 
 \part{本論}
-
-%ちさちゃん
 \chapter{Scratchについて}
 \section{Scratchとは}
 Scratchとは、プログラミングを学ぶ子どもや初心者が、構文の書き方や使い方を覚えることなく結果を得ることができる、プログラミング言語学習環境である。2006年にMITメディアラボのミッチェル・レズニックが主導するライフロング・キンダーガーデン・グループによって開発された。プログラミングを可能な限り簡単に学べるよう、視覚表現でキャラクターを動かすことができ、ビジュアルプログラミングとも言われている。
@@ -272,13 +271,7 @@ PythonではjsonモジュールをインポートすることでJSON形式ファ
  
 \subsection{プログラムの解説}
 本研究では２つのプログラムと１つの辞書データを使用する。ソースコード\ref{saprog}はブロック、スプライトの数、cos類似度を計算結果を出力する。ソースコード\ref{scprog}はcos類似度を実施に計算するプログラムとなっている。共通するブロックの名前の個数である値の積を分子、値の自乗をブロックの種類分足してルートをかけたものをA,Bそれぞれ計算しかけたものを分母として、割り算を行い、cos類似度を求めている。
-\newpage
-\lstinputlisting[caption=SimCalculator.py,label=scprog]{SimCalculator.py}
-\newpage
-\lstinputlisting[caption=scratchAnalysis.py,label=saprog]{scratchAnalysis.py}
-\newpage
-\lstinputlisting[caption=scratch\_block.py,label=sbprog]{scratch_block.py}
-\newpage
+
 \subsubsection{cos類似度とは}
 cos類似度とはベクトル空間モデルにおいて、文書同士を比較する際に用いられる類似度計算方法である。
 \begin{quote}
@@ -578,15 +571,15 @@ block & splite & cos \\
   %\label{block}
  %\end{figure}
  
- \begin{figure}[!h]
-  \centering
-   \includegraphics[scale=0.4]{splite1.pdf}
-   \includegraphics[scale=0.4]{splite2.pdf}
-   \includegraphics[scale=0.4]{splite3.pdf}
-   \includegraphics[scale=0.4]{splite4.pdf}
-  \caption{スプライト数とcos類似度のグラフの評価}
-  \label{splite}
- \end{figure}
+ %\begin{figure}[!h]
+  %\centering
+ %  \includegraphics[scale=0.4]{splite1.pdf}
+  % \includegraphics[scale=0.4]{splite2.pdf}
+   %\includegraphics[scale=0.4]{splite3.pdf}
+   %\includegraphics[scale=0.4]{splite4.pdf}
+  %\caption{スプライト数とcos類似度のグラフの評価}
+  %\label{splite}
+ %\end{figure}
 
 \begin{table}[h]
  \scriptsize
@@ -660,10 +653,14 @@ block & splite & cos \\
 \bibitem{rstrip} 5. 組み込み型 ー Python2.7.x ドキュメント (2017年1月2日), http://docs.python.jp/2/library/stdtypes.html?highlight=rstrip\#str.rstrip
 \bibitem{loads} 18.2. json　ー JSON エンコーダおよびデコーダ (原文) ー Python2.7.x ドキュメント (2017年1月2日), http://docs.python.jp/2/library/json.html
 
-
-
-
 \end{thebibliography}
+
+\newpage
+\appendix
+\lstinputlisting[caption=SimCalculator.py,label=scprog]{SimCalculator.py}
+\lstinputlisting[caption=scratchAnalysis.py,label=saprog]{scratchAnalysis.py}
+\lstinputlisting[caption=scratch\_block.py,label=sbprog]{scratch_block.py}
+
 
 
 

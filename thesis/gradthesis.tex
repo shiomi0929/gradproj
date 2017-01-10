@@ -3,38 +3,18 @@
 % パッケージの設定，これは不要なものもあるかもしれない
 \usepackage{amsmath,amssymb}
 \usepackage{bm}
-\usepackage{epsbox}
-\usepackage[dvipdfmx]{graphicx}
+
 \usepackage{verbatim}
 \usepackage{wrapfig}
 \usepackage{ascmac}
 \usepackage{makeidx}
+
+\usepackage{epsbox}
 \usepackage[dvipdfmx]{graphicx}
 
 \usepackage{listings, jlisting}
 \usepackage{color}
  
-\lstset{
-    language=Python,%プログラミング言語によって変える。
-    numbers = left,
-    numberstyle = {\tiny \emph},
-    numbersep = 10pt,
-    breaklines = true,
-    breakindent = 40pt,
-    frame = tlRB,
-    frameround = ffft,
-    framesep = 3pt,
-    rulesep = 1pt,
-    rulecolor = {\color{black}},
-    rulesepcolor = {\color{black}},
-    flexiblecolumns = true,
-    keepspaces = false,
-    basicstyle = \scriptsize,
-    identifierstyle = \itshape\scriptsize,
-    commentstyle = \fontfamily{ptm}\selectfont\scriptsize,
-    stringstyle = \scshape\scriptsize,
-    tabsize = 4, 
- }
 
 \makeindex
 %%% 余白・文字数調整(左37mm, 右18mm, 上下共30mm, 文字数約40字/行, 行数約32行)
@@ -66,38 +46,48 @@
 \kcharparline{40} % 一行を40字に
 %%% タイトル設定
 \begin{titlepage}
+\begin{flushleft}
+{\large
+2016年度　卒業論文 \\ 
+}
+\end{flushleft}
 \begin{flushright}
 {\large
 指導教員：来住伸子　教授 \\ % 主査
 %副査：□□□□　教授              % 副査
 }
 \end{flushright}
+
 \begin{center}
 \vspace{150truept}
 {\huge Scratchプログラムの可視化による類似度推定}\\ % タイトル
-{\huge 可視化によるScratchプログラムの理解支援}\\ % タイトル
+%{\huge 可視化によるScratchプログラムの理解支援}\\ % タイトル
 
 %\vspace{10truept}
 %{\Large subtitle}\\ % サブタイトル（なければコメントアウト）
-\vspace{50truept}
+
+\vspace{80truept}
+{\huge 津田塾大学 学芸学部 情報科学科}\\
+\vspace{30truept}
 {\huge G13908　岩科智彩}\\ % 学籍番号 著者
 \vspace{10truept}
 {\huge G13924　森下汐美}\\ % 学籍番号
 \vspace{50truept}
-{\huge 平成29年1月13日}\\ % 提出日
+{\huge 2017年1月13日}\\ % 提出日
 \end{center}
 \end{titlepage}
 
 \frontmatter
 \begin{abstract} %論文要旨
-近年プログラミング教育の推進に伴い、義務教育化が進んでいる。その中で米国マサチューセッツ工科大学のメディアラボが開発したScratchは無償で提供されているグラフィックプログラミング環境である。プログラミングを行う際の命令を本ツールではブロックを組み合わせて作り上げる。初心者にとっては使いやすい構造となっているため米国では利用が増えているものの、日本のユーザーは全体の1\%にも満たない。そこで実際に本ツールで公表をされているデータを利用してより教育に用いられるツールの解析を目指す。
-本ツールですでに
+\subsubsection{概論}
+近年プログラミング教育が推進され、学校での義務教育化が進んでいる。プログラミング教育の方法の1つとして挙げられているのが、米国マサチューセッツ工科大学のメディアラボが開発したScratchである。これは、無償で提供されているグラフィックプログラミング環境を指し、プログラミングを行う際の命令をブロックを組み合わせることで作り上げる。初心者にとっては使いやすい構造となっているため米国では利用者が増えているものの、日本のユーザーは全体の1\%にも満たない。そこで実際に本ツールで公表されているデータを利用して、より教育現場で用いられるようなツールを目指すためにデータ解析を行う。
+本ツールではすでに
 \begin{enumerate}
-  \item 各ブロックの種類が使われている全体での割合
-  \item あるプロジェクトが他ユーザーの引用関係を示したツリー構造
+  \item 全ユーザにおける各ブロックの種類の使用率
+  \item あるプロジェクトの他ユーザーへの引用関係を示したツリー構造
 \end{enumerate}
-が公表されている。しかしこのデータでは全体図の把握が可能であるが1つのプログラムでブロックがどのように使われているか、引用していた場合引用元からどの程度変更させたかは不明である。
-従って本研究では1つのプログラムで使用されているブロックを解析し結果を出すと同時に引用元との比較を行い、関係性を導き出す。
+が公表されている。しかしこのデータは全体像の把握が可能であるものの、1つのプログラムにおけるブロックの使い方や、引用していた場合引用元からの変更の程度などは読み取ることができない。
+従って本研究では1つのプログラムで使用されているブロックを解析し結果を出力すると同時に引用元との比較を行い、類似性を導き出す。
 \end{abstract}
 
 %%% 目次
@@ -136,12 +126,31 @@ Scratchでは全世界のユーザーのうち日本でのユーザーは現状�
 
 本研究ではScratchで公開されているプログラム、統計データを利用して分析、実験を実施する。その中でも公開データであるリミックスツリーの精度を検証し、実際に使い易いデータの可視化であるかどうかを評価する。その結果を用いてプログラミング教育における課題点を解決を目指す。
 
-%\section{本論文の構成}
+
+\lstset{
+    language=Python,%プログラミング言語によって変える。
+    numbers = left,
+    numberstyle = {\tiny \emph},
+    numbersep = 10pt,
+    breaklines = true,
+    breakindent = 40pt,
+    frame = tlRB,
+    frameround = ffft,
+    framesep = 3pt,
+    rulesep = 1pt,
+    rulecolor = {\color{black}},
+    rulesepcolor = {\color{black}},
+    flexiblecolumns = true,
+    keepspaces = false,
+    basicstyle = \scriptsize,
+    identifierstyle = \itshape\scriptsize,
+    commentstyle = \fontfamily{ptm}\selectfont\scriptsize,
+    stringstyle = \scshape\scriptsize,
+    tabsize = 4, 
+ }
 
 
 \part{本論}
-
-%ちさちゃん
 \chapter{Scratchについて}
 \section{Scratchとは}
 Scratchとは、プログラミングを学ぶ子どもや初心者が、構文の書き方や使い方を覚えることなく結果を得ることができる、プログラミング言語学習環境である。2006年にMITメディアラボのミッチェル・レズニックが主導するライフロング・キンダーガーデン・グループによって開発された。プログラミングを可能な限り簡単に学べるよう、視覚表現でキャラクターを動かすことができ、ビジュアルプログラミングとも言われている。
@@ -262,13 +271,7 @@ PythonではjsonモジュールをインポートすることでJSON形式ファ
  
 \subsection{プログラムの解説}
 本研究では２つのプログラムと１つの辞書データを使用する。ソースコード\ref{saprog}はブロック、スプライトの数、cos類似度を計算結果を出力する。ソースコード\ref{scprog}はcos類似度を実施に計算するプログラムとなっている。共通するブロックの名前の個数である値の積を分子、値の自乗をブロックの種類分足してルートをかけたものをA,Bそれぞれ計算しかけたものを分母として、割り算を行い、cos類似度を求めている。
-\newpage
-\lstinputlisting[caption=SimCalculator.py,label=scprog]{SimCalculator.py}
-\newpage
-\lstinputlisting[caption=scratchAnalysis.py,label=saprog]{scratchAnalysis.py}
-\newpage
-\lstinputlisting[caption=scratch\_block.py,label=sbprog]{scratch_block.py}
-\newpage
+
 \subsubsection{cos類似度とは}
 cos類似度とはベクトル空間モデルにおいて、文書同士を比較する際に用いられる類似度計算方法である。
 \begin{quote}
@@ -381,9 +384,9 @@ block & splite & cos \\
 
 
 \part{結論}
-\chapter{結論}
+\chapter{結果}
 \section{実験結果}
-出力されたデータを用いて散布図に表した。縦軸にcos類似度の値、横軸に出力されたブロック数（スプライト数）を元のプログラム（"Pong Starter"）の数値で割った値の対数値でとる。数値では（1,1）が最も類似しているプロジェクトであるため似ているものから青、赤、緑、紫、水色で色を区別してプロットをする。
+出力されたデータを用いて散布図に表した。縦軸にcos類似度の値、横軸に出力されたブロック数（スプライト数）を元のプログラム（"Pong Starter"、ID:10000036）の数値で割った値の対数値でとる。数値では（1,1）が最も類似しているプロジェクトであるため似ているものから青、赤、緑、紫、水色で色を区別してプロットをする。
 
 \subsection{ブロック数とcos類似度のグラフ}
 
@@ -546,14 +549,78 @@ block & splite & cos \\
 \section{類似研究者}
 \subsection{来住伸子教授}
 \section{自己評価}
-実験結果が
-\\新奇性
-\\有益性があったかどうかを評価する。
-\\グラフがリミックスツリーと比べてどのようなことがわかり、どのようなメリットがあるのか。
-\\グラフは実際のプロジェクト同士の類似関係と比べて性格であるかどうか。
-\\今後このデータ結果をどのように利用をすれば教育機関で生かされるか。
-\\さらに改善点を示す。
+前章で得られた合計12個のプロジェクトと元のプロジェクト（ID:10000036）を、操作・音・外装・プログラムの動き・ブロックの木構造・ゲーム終了時の6つの項目で比較し、可視化した結果が正しいかどうか検証した。（表\ref{block}）（表\ref{splite}）
+\\
+ブロック数とcos類似度のグラフ、スプライト数とcos類似度のグラフどちらにおいても同じような結果が出ており、それぞれの段で最も似ているもの・最も離れているもの・中間という条件で取り出したプロジェクトは、やはりよく似ている・違う・少し違う内容となっていた。よって、今回使用したブロック数・スプライト数・類似度はプロジェクト同士の類似度を図る上で重要な要素であったと言える。
+\\
+また、1段目から4段目まですべてを通して見てみると、2段目以降にも元のプロジェクトと同じような内容のものが含まれていることが分かった。これは、リミックスツリーの根元（元のプロジェクト）から離れたプロジェクトも、元のプロジェクトと同じ場合が生じているということが言え、リミックスツリーではその事実までは可視化されていなかったということが伺える。本研究で行った可視化手法では、例え元のプロジェクトへいくつも遡るところに位置するプロジェクトであったとしても、ほぼ正確な類似関係が可視化できており、新たな可視化として提案できるのではないか。ここに本研究の新奇性を見出すことができた。
+\\
+この可視化がツール上に加わることで、それぞれの生徒がどの程度自分のアイデアでプロジェクトを作成できているか、もしくはできていないのかという新たな情報を提供でき、教育者として個々の生徒の進度を把握する一つの手助けになるのではないかと考えている。
+\\
+ブロック数とcos類似度のグラフ、スプライト数とcos類似度のグラフの表の中で、どの段においても最も似ているもの・最も離れているものはどれも共通したプロジェクトが得られたが、中間にあたるプロジェクトがどの段においても異なるという結果となった。これは、類似性を表す上で使用したブロック数とスプライト数の2つの要素によって、中間と位置付けるプロジェクトが異なったということである。本研究では2要素ごとに可視化を行ったため、このような誤差が出てしまったが、今後3次元で可視化を試みることで、改善できるのではないかと考えている。
+\\
+\\
+\\
+% \begin{figure}[!h]
+%  \centering
+   %\includegraphics[scale=0.4]{block1.pdf}
+   %\includegraphics[scale=0.4]{block2.pdf}
+   %\includegraphics[scale=0.4]{block3.pdf}
+   %\includegraphics[scale=0.4]{block4.pdf}
+  %\caption{ブロック数とcos類似度のグラフの評価}
+  %\label{block}
+ %\end{figure}
+ 
+ %\begin{figure}[!h]
+  %\centering
+ %  \includegraphics[scale=0.4]{splite1.pdf}
+  % \includegraphics[scale=0.4]{splite2.pdf}
+   %\includegraphics[scale=0.4]{splite3.pdf}
+   %\includegraphics[scale=0.4]{splite4.pdf}
+  %\caption{スプライト数とcos類似度のグラフの評価}
+  %\label{splite}
+ %\end{figure}
 
+\begin{table}[h]
+ \scriptsize
+ \caption{ブロック数とcos類似度のグラフの評価}
+ \label{block}
+ \begin{center}
+\begin{tabular}{|p{1.7cm}||p{1cm}|p{1cm}|p{1.7cm}|p{2cm}|p{1cm}|p{1.7cm}|} \hline
+
+プロジェクトID & 操作 & 音 & 外装 & プログラムの動き & 木構造 & ゲーム終了時 \\ \hline \hline
+1段目 &  &  &  &  &  &  \\ \hline
+\textcolor{red}{48772890} & 同じ & 同じ & ボールの色だけ & バーが上下にも動く & 同じ & 同じ \\ \hline
+\textcolor{red}{136740878} & 同じ & なくなる & 背景だけ & 同じ & 同じ & 同じ \\ \hline
+\textcolor{blue}{19276295} & 同じ & 同じ & 背景・ボールの大きさ & ボールに触れたら負け、コウモリを跳ね返してボールが下に落ちないようにする & 違う & 負けても終わらない \\ \hline
+\textcolor{magenta}{14377547} & 同じ & 同じ & 背景・ボールの色 & バーにボールが当たるとポイントが加算される & 違う & 同じ \\ \hline
+
+2段目 &  &  &  &  &  &  \\ \hline
+\textcolor{red}{10630533} & 同じ & 違う & 背景・ボール・バー & 同じ & ほぼ同じ & 同じ \\ \hline
+\textcolor{red}{20087979} & 同じ & 違う & 背景・ボール・バー & 同じ & ほぼ同じ & 音が鳴り、もう一度動き始める \\ \hline
+\textcolor{blue}{73001742} & なくなる & 違う & ボールが複数・バーも２種類 & ボールが同時にたくさん動き、ユーザがバーを動かせないようになっている & ほぼ同じ & なし \\ \hline
+\textcolor{magenta}{31314852} & 同じ & 同じ & 背景・ボール・バー & バーに当たるとポイントがたまるが、バーに当たらないと地面に当たって跳ね返る & 違う & 何回か落ちてゲームオーバー画面になる \\ \hline
+
+3段目 &  &  &  &  &  &  \\ \hline
+\textcolor{red}{97570310} & 同じ & なし & 背景・ボール & 同じ & 同じ & 同じ \\ \hline
+\textcolor{blue}{71289464} & なくなる & なし & 背景・ボール・ポイント３種 & ボールが勝手に動着続ける & 違う & 終了しない \\ \hline
+\textcolor{magenta}{70556576} & なくなる & なし & 背景・ボールが複数・ポイント & 全く動かない & 少し違う & 終了しない \\ \hline
+
+4段目 &  &  &  &  &  &  \\ \hline
+\textcolor{red}{11534736} & 同じ & 同じ & 背景・ボール & 同じ & 同じ & 同じ \\ \hline
+\textcolor{red}{23516253} & 同じ & 違う & 背景・ボール & 同じ & 同じ & 跳ね返り続けられる \\ \hline
+\textcolor{blue}{44740270} & なくなる & なし & 背景・ボール・ポイント & なくなる & 少し違う & なくなる \\ \hline
+\textcolor{magenta}{118943024} & ２人用になりキーボードで操作する & なし & 背景・ボール・バー・ポイント & バー２つ、ボール２つでボールが落ちないように操作をし、 途中からボールが早くなる、片方にはポイントはたまるが、もう片方には入らない & 違う & ポイントがたまっても終わらない \\ \hline
+
+\end{tabular}
+\end{center}
+\end{table}
+
+
+
+
+\chapter{結論}
+\section{結論}
 
 %
 %%% 謝辞
@@ -586,10 +653,14 @@ block & splite & cos \\
 \bibitem{rstrip} 5. 組み込み型 ー Python2.7.x ドキュメント (2017年1月2日), http://docs.python.jp/2/library/stdtypes.html?highlight=rstrip\#str.rstrip
 \bibitem{loads} 18.2. json　ー JSON エンコーダおよびデコーダ (原文) ー Python2.7.x ドキュメント (2017年1月2日), http://docs.python.jp/2/library/json.html
 
-
-
-
 \end{thebibliography}
+
+\chapter{付録}
+\lstinputlisting[caption=SimCalculator.py,label=scprog]{SimCalculator.py}
+\newpage
+\lstinputlisting[caption=scratchAnalysis.py,label=saprog]{scratchAnalysis.py}
+\newpage
+\lstinputlisting[caption=scratch\_block.py,label=sbprog]{scratch_block.py}
 
 
 
@@ -598,3 +669,4 @@ block & splite & cos \\
 %
 %
 \end{document}
+

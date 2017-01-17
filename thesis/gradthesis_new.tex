@@ -403,7 +403,7 @@ block & splite & cos \\
 
 \part{結論}
 \chapter{結果}
-\section{Pong Starterプロジェクトの実験結果}
+\section{Pong Starterプロジェクト-大規模なリミックスツリー-}
 
 \subsection{ブロック数とスプライト数の散布図}
 出力されたデータを元に横軸がブロック数、縦軸がスプライト数の散布図を作成した。基準を１にするため、ブロック数を元のプロジェクト（ID:10000036）の１９個で割り、スプライト数を２で割った。４つの比較ができるように、目盛りは全ての最大値に揃えた。
@@ -614,39 +614,87 @@ block & splite & cos \\
  \end{tabular}
  \end{figure}
  
- \section{プロジェクトの実験結果}
+ \section{Maze Gameプロジェクト-小規模なリミックスツリー-}
+　実際に教育現場で本研究の可視化を利用する場合、クラスごとや学年ごとに授業を行うことが考えられる。教師のプログラムを生徒がリミックスし、生徒自身でオリジナルのプログラムを書き、提出するという授業形態が考えられ、リミックスツリーの規模が小さい場合も想定ができる。
+　今回はMaze Gameという迷路のプログラムを使って、小規模なリミックスツリーの類似度推定も合わせて行なった。この実験では小規模であるため、1段目・2段目のみの集計となった。
+
+ \newpage
+\subsection{ブロック数とcos類似度の散布図}
+ 出力されたデータを元に横軸がブロック数、縦軸がcos類似度の散布図を作成した。元プロジェクト（ID:2768574）のブロック数は65で割った。2つの比較ができるように、目盛りは全ての最大値に揃えた。
+
+\begin{figure}[h]
+ \begin{tabular}{cc}
+ 	\begin{minipage}[t]{0.45\hsize}
+	 \centering
+	 \includegraphics[keepaspectratio, scale = 0.35]{mazegame_first_block.pdf}
+	 \caption{１段目のグラフ}
+	 \label{mazegame_first_block_cos}
+	\end{minipage}
+        \begin{minipage}[t]{0.45\hsize}
+	 \centering
+	 \includegraphics[keepaspectratio, scale = 0.35]{mazegame_second_block.pdf}
+	 \caption{２段目のグラフ}
+	 \label{mazegame_second_block_cos}
+	\end{minipage}
+ \end{tabular}
+ \end{figure}
+
+\subsection{スプライト数とcos類似度の散布図}
+ 出力されたデータを元に横軸がスプライト数、縦軸がcos類似度の散布図を作成した。元プロジェクト（ID:2768574）のスプライト数は3で割った。2つの比較ができるように、目盛りは全ての最大値に揃えた。
+
+\begin{figure}[h]
+ \begin{tabular}{cc}
+ 	\begin{minipage}[t]{0.45\hsize}
+	 \centering
+	 \includegraphics[keepaspectratio, scale = 0.35]{mazegame_first_splite.pdf}
+	 \caption{１段目のグラフ}
+	 \label{mazegame_first_splite_cos}
+	\end{minipage}
+        \begin{minipage}[t]{0.45\hsize}
+	 \centering
+	 \includegraphics[keepaspectratio, scale = 0.35]{mazegame_second_splite.pdf}
+	 \caption{２段目のグラフ}
+	 \label{mazegame_second_splite_cos}
+	\end{minipage}
+ \end{tabular}
+ \end{figure}
+
  
 
 \chapter{評価}
 
 \section{グラフ結果における評価}
-
-\subsection{ブロック数とスプライト数の比較}
+\subsection{Pongプロジェクト-大規模なリミックスツリー-}
+\subsubsection{ブロック数とスプライト数の比較}
 ブロック数とスプライト数を比較すると段数が上がり、元のプログラムよりブロック数やスプライト数が多いほど類似度は低く、グラフ上では一番離れていると考えられる。つまり１段目より２段目以降が右上に点が広がっていればリミックスされ変更が加えられていることがわかる。実際の結果によるとほとんどの点が左下にある。
 
-\subsection|{スプライトあたりのブロック数とcos類似度の比較}
+\subsubsection{スプライトあたりのブロック数とcos類似度の比較}
 スプライトあたりのブロック数は１つのオブジェクトに対し、どれだけだけのブロックが使われているかを計算したものである。元のプロジェクトから離れるほど横軸の点は広がり、縦軸は低いところに点が存在するはずである。実際のグラフでは１段目から２段目ではこのような結果になっている。しかし１段目と３段目は点が少し広がっているがあまり変化はない。
 
-\subsection{ブロック数、スプライト数とcos類似度の比較}
-ブロック数、スプライト数とcos類似度の散布図では元のプロジェクト（１、１）の点から遠ざかっているほど類似していないことになる。２段目以降ではスプライトあたりのブロック数と同様に右下に広がっていればリミックスツリーと辻褄が合う。ただ実際のグラフでは１段目から２段目では広がりがわかるが、３段目ではあまり広がっていない。スプライト数とcos類似度の散布図でも同様のことがわかる。
+\subsubsection{ブロック数、スプライト数とcos類似度の比較}
+ブロック数、スプライト数とcos類似度の散布図では元のプロジェクト(1,1)の点から遠ざかっているほど類似していないことになる。２段目以降ではスプライトあたりのブロック数と同様に右下に広がっていればリミックスツリーと辻褄が合う。ただ実際のグラフでは１段目から２段目では広がりがわかるが、３段目ではあまり広がっていない。スプライト数とcos類似度の散布図でも同様のことがわかる。
 
-\subsection{ブロック数、スプライト数とcos類似度の個数によるカラープロット}
-個数の一番多い点は１段目のグラフでは（１、１）である。２段目以降、この点より内側にあるほどリミックスされたプロジェクトが元のプロジェクトだけではなく違うプロジェクトであることもわかる。図\ref{third_block_color}や\ref{fourth_block_color}にはそのような点が現れている。スプライト数とcos類似度のカラーマップでも同様に図\ref{third_splite_color}と\ref{fourth_splite_color}でも同様である。またどちらのグラフでも離れている点が３段目より４段目の方が内側にある。
+\subsubsection{ブロック数、スプライト数とcos類似度の個数によるカラープロット}
+個数の一番多い点は１段目のグラフでは(1,1)である。２段目以降、この点より内側にあるほどリミックスされたプロジェクトが元のプロジェクトだけではなく違うプロジェクトであることもわかる。図\ref{third_block_color}や\ref{fourth_block_color}にはそのような点が現れている。スプライト数とcos類似度のカラーマップでも同様に図\ref{third_splite_color}と\ref{fourth_splite_color}でも同様である。またどちらのグラフでも離れている点が３段目より４段目の方が内側にある。
 
-\subsection{元のプロジェクトとの比較}
+\subsubsection{元のプロジェクトとの比較}
 作成したグラフより、最も似ている数値のプロジェクト、最も離れている数値のプロジェクト、その中間のものを選び抜いた。最も似ているものは(1,1)にあるものが元のプロジェクトに最も近いものと判断する。１段目、２段目、４段目では(1,1)のプロジェクトが多く存在するため、その中から２つに絞る。これらのプロジェクトと元のプロジェクト（ID:10000036）を、操作・音・外装・プログラムの動き・ブロックの木構造・ゲーム終了時の6つの項目で比較し、可視化した結果が正しいかどうか検証した。（表\ref{block}）（表\ref{splite}）IDは色分けされており、赤が元プロジェクトと距離が近いもの、青が遠いもの、ピンクが中間のものを指す。
 \\
 　ブロック数とcos類似度のグラフ、スプライト数とcos類似度のグラフどちらにおいても同じような結果が出ており、それぞれの段で最も似ているもの・最も離れているもの・中間という条件で取り出したプロジェクトは、やはりよく似ている・違う・少し違う内容となっていた。よって、今回使用したブロック数・スプライト数・類似度はプロジェクト同士の類似度を図る上で重要な要素であったと言える。
 \\
 　また、1段目から4段目まですべてを通して見てみると、2段目以降にも元のプロジェクトと同じような内容のものが含まれていることが分かった。これは、リミックスツリーの根元（元のプロジェクト）から離れたプロジェクトも、元のプロジェクトと同じ場合が生じているということが言え、リミックスツリーではその事実までは可視化されていなかったということが伺える。本研究で行った可視化手法では、例え元のプロジェクトへいくつも遡るところに位置するプロジェクトであったとしても、ほぼ正確な類似関係が可視化できており、新たな可視化として提案できるのではないか。ここに本研究の新奇性を見出すことができた。
 
+\newpage
+\subsection{Maze Gameプロジェクト-小規模なリミックスツリー-}
+\subsubsection{ブロック数、スプライト数とcos類似度の比較}
+　ブロック数・スプライト数どちらのグラフも段数に限らずばらつきが見られ、一回のリミックスだけで元プロジェクトに比べて改良されているプロジェクトも複数あることが分かった。全体的に大規模なリミックスツリーと同じような傾向が見られたが、プロジェクトの量が少ないため、類似度がかなり低いプロジェクトはあまり見られなかった。
 %この可視化がツール上に加わることで、それぞれの生徒がどの程度自分のアイデアでプロジェクトを作成できているか、もしくはできていないのかという新たな情報を提供でき、教育者として個々の生徒の進度を把握する一つの手助けになるのではないかと考えている。
 
 %ブロック数とcos類似度のグラフ、スプライト数とcos類似度のグラフの表の中で、どの段においても最も似ているもの・最も離れているものはどれも共通したプロジェクトが得られたが、中間にあたるプロジェクトがどの段においても異なるという結果となった。これは、類似性を表す上で使用したブロック数とスプライト数の2つの要素によって、中間と位置付けるプロジェクトが異なったということである。本研究では2要素ごとに可視化を行ったため、このような誤差が出てしまったが、今後3次元で可視化を試みることで、改善できるのではないかと考えている。
 
 \begin{table}[h]
  \scriptsize
- \caption{ブロック数とcos類似度のグラフの評価}
+ \caption{ブロック数とcos類似度のグラフの評価-大規模なリミックスツリー-}
  \label{block}
  \begin{center}
 \begin{tabular}{|p{1.7cm}||p{1cm}|p{1cm}|p{1.7cm}|p{2cm}|p{1cm}|p{1.7cm}|} \hline
@@ -681,7 +729,7 @@ block & splite & cos \\
 
 \begin{table}[h]
  \scriptsize
- \caption{スプライト数とcos類似度のグラフの評価}
+ \caption{スプライト数とcos類似度のグラフの評価-大規模なリミックスツリー-}
  \label{splite}
  \begin{center}
 \begin{tabular}{|p{1.7cm}||p{1cm}|p{1cm}|p{1.7cm}|p{2cm}|p{1cm}|p{1.7cm}|} \hline
@@ -714,10 +762,11 @@ block & splite & cos \\
 \end{center}
 \end{table}
 
+\newpage
 \section{第三者による評価}
 \subsection{評価方法}
-
-
+　大規模なリミックスツリーにおいて評価するために抽出したプロジェクトが、第三者は元プロジェクトと比べてどのように評価するか、Scratchの専門家2名と情報科学を学ぶ学生5人にアンケートをとった。
+　方法としては、アンケートフォーラムを用意し収集した。アンケート内容は、  \label{block}もしくは\label{splite}で抽出したプロジェクトの内1段目から4段目の最も似ている数値のプロジェクト、最も離れている数値のプロジェクト、その中間、合計16個のプロジェクトと元プロジェクトを実際に動かし、似ているか似ていないかを5段階評価してもらう。アンケート回答者にはそれぞれのプロジェクトは何段目のものなのかは伏せ、並列した数字（ゲーム1〜ゲーム16）で表示した。
 %
 %%% 謝辞
 \chapter{謝辞}
@@ -765,8 +814,8 @@ block & splite & cos \\
 \lstinputlisting[caption=scratchAnalysis.py,label=saprog]{scratchAnalysis.py}
 \lstinputlisting[caption=scratch\_block.py,label=sbprog]{scratch_block.py}
 \newpage
-\lstinputlisting[caption=data\_to\_cross.py,label=dcroprog]{data_to_cross.py}
-\lstinputlisting[caption=data\_to\_graph.py,label=dgprog]{data_to_graph.py}
+%\lstinputlisting[caption=data\_to\_cross.py,label=dcroprog]{data_to_cross.py}
+%\lstinputlisting[caption=data\_to\_graph.py,label=dgprog]{data_to_graph.py}
 
 \newpage
 \printindex

@@ -317,12 +317,14 @@ cos類似度とはベクトル空間モデルにおいて、文書同士を比�
 \end{equation}
 \\
 %ブロックの例で説明をする
-【例】（\cite{tf_idf_cos}）
-\\文章A：「赤と緑、緑と青」
-\\文章B：「赤と黄、紫と赤」
+\subsubsection{cos類似度計算のイメージ}（\cite{tf_idf_cos}）
+\\プロジェクトAの要素　「赤と緑、緑と青」
+\\プロジェクトBの要素　「赤と黄、紫と赤」
 \\２つの文章のベクターは赤、緑、青、黄、紫のうちそれぞれ何個使われているかを表す。
-\\ベクターA：(赤、緑、黄、青、紫) = (1, 2, 0, 1, 0)
-\\ベクターB：(赤、緑、黄、青、紫) = (2, 0, 1, 0 ,1)
+\\プロジェクトAのベクター
+\\(赤、緑、黄、青、紫) = (1, 2, 0, 1, 0)
+\\プロジェクトBのベクター
+\\(赤、緑、黄、青、紫) = (2, 0, 1, 0 ,1)
 \\２つのベクターを数式に当てはめる。
 \begin{equation}
 A \ast B = 1 \ast 2 + 2 \ast 0 + 0 \ast 1 + 1 \ast 0 + 0 \ast 1 = 2
@@ -337,16 +339,35 @@ A \ast B = 1 \ast 2 + 2 \ast 0 + 0 \ast 1 + 1 \ast 0 + 0 \ast 1 = 2
 \cos\theta = A \ast B \div |A| |B| = \frac{3}{\sqrt{6}\sqrt{6}} = \frac{1}{2} = 0.5
 \end{equation}
 \\本研究では例”色”に当たる部分を、”ブロックの種類”にして計算を行った。Scratchでは数多くのブロックが用意されており、どのブロックを使用するかによって、まったく異なるプログラムを作成することができる。それぞれのプログラムのブロック数を集計した後、ソートしベクターに直し計算式に適用する。
+\subsubsection{Scratchブロックを用いたcos類似度の計算}
+プロジェクトAのブロック名：個数\\
+{\sl \{'changeXposBy:': 0, 'gotoX:y:': 1,  'whenGreenFlag': 3, 'doForever': 3, 'turnRight': 1, 'stopScripts': 1, 'list:contains:': 0, 'randomFrom:to:': 1, 'say:': 0, 'think:': 0, 'distanceTo:': 0, 'whenKeyPressed': 0\}}\\
+プロジェクトBのブロック名：個数\\
+{\sl \{'changeXposBy:': 0, 'gotoX:y:': 1, 'whenGreenFlag': 3, 'doForever': 2, 'turnRight': 0, 'stopScripts': 0, 'list:contains:': 0, 'randomFrom:to:': 0, 'say:': 1, 'think:': 0, 'distanceTo:': 0, 'whenKeyPressed': 4\}}\\
+プロジェクトAのベクター\\
+{\sl（0, 1, 3, 3, 1, 1, 0, 1, 0, 0, 0, 0）}\\
+プロジェクトBのベクター\\
+{\sl（0, 1, 3, 2, 0, 0, 0, 0, 1, 0, 0, 4）}\\
+\begin{equation}
+A \ast B = 0 \ast 0 + 1 \ast 1 + 3 \ast 3 + 3 \ast 2 + 1 \ast 0 + 1 \ast 0 + 0 \ast 0 + 1 \ast 0 + 0 \ast 1 + 0 \ast 0 + 0 \ast 0 + 0 \ast 4 = 16
+\end{equation}\\
+\begin{equation}
+|A| = \sqrt{( 0 \ast 0 + 1 \ast 1 + 3 \ast 3 + 3 \ast 3 + 1 \ast 1 + 1 \ast 1 + 0 \ast 0 + 1 \ast 1 + 0 \ast 0 + 0 \ast 0 + 0 \ast 0 + 0 \ast 0 )} = \sqrt{22}
+\end{equation}\\
+\begin{equation}
+|B| = \sqrt{( 0 \ast 0 + 1 \ast 1 + 3 \ast 3 + 2 \ast 2 + 0 \ast 0 + 0 \ast 0 + 0 \ast 0 + 0 \ast 0 + 1 \ast 1 + 0 \ast 0 + 0 \ast 0 + 4 \ast 4 )} = \sqrt{31}
+\end{equation}\\
+\begin{equation}
+\cos\theta = A \ast B \div |A| |B| = \frac{16}{\sqrt{22}\sqrt{31}} = \frac{16}{\sqrt{682}} = 0.61267...
+\end{equation}\\
+本研究ではベクターを作り出す部分までをscratchAnalysis.py（付録\ref{saprog}）で行い、それ以後の計算を次のSimCalculator.py（付録\ref{scprog}）で行い、値をscratchAnalysis.pyに返す。
+
 \subsubsection{SimCalculatorの解説}
 %類似度の計算のおおまかな流れを書いてから詳しく個々を説明する
-cos類似度の計算は次のプログラムで行う。（サンプルプログラム：\cite{simcalc}）
-\\
-ソースコード\ref{scprog}では２つのベクトルの内積を計算するsim\_cosを作る。
-\\
-sim\_cosではソースコード\ref{saprog}のベクターリストxxxとyyyを引数とし内積の計算をする。v1(xxx)のn番目のブロックと同じものがv2(yyy)にも存在をするとき、変数numeratorに２つを掛け合わせたものを加える。次にそれぞれのベクターの値を二乗していったものの合計の平方根を掛け合わせたものが分母となるため変数denominatorと置く。最後にnumeratorをdenominatorで割ったものを返す。
+cos類似度の計算は次のプログラムで行う。（付録\ref{scprog}）SimCalculatorでは２つのベクトルの内積を計算するメソッドsim\_cosを作る。sim\_cosではソースコード\ref{saprog}のベクターリストxxxとyyyを引数とし内積の計算をする。v1(xxx)のn番目のブロックと同じものがv2(yyy)にも存在をするとき、変数numeratorに２つを掛け合わせたものを加える。次にそれぞれのベクターの値を二乗していったものの合計の平方根を掛け合わせたものが分母となるため変数denominatorと置く。最後にnumeratorをdenominatorで割ったもの、すなわちcos類似度の値を返す。
 
-\subsubsection{scratchAnalysisの解説}
-プログラム\ref{saprog}では始めに使用するモジュールの読み込みをする。jsonデータを使用するためのモジュール（L10）、主にHTTPでURLを開くための関数およびクラスのurllib2モジュール（L11, \cite{urllib}）、csv形式（データをカンマで区切ったもの）のデータを扱うことができるcsvモジュール（L12）を読み込む。またscratch\_block（ソースコード\ref{sbprog}）を同様に読み込む。このデータファイルはScratchに登場するブロックを辞書型にしたデータファイルscratch\_block.py(\ref{sbprog})であり、キーがブロックの名前、その値は初期値0を指定したものである。最後にcos類似度の計算を行うSimCalculator（ソースコード\ref{scprog}）を読み込む。
+\subsubsection{scratchAnalysisの解説}（付録\ref{saprog}）
+始めに使用するモジュールの読み込みをする。jsonデータを使用するためのモジュール（L10）、主にHTTPでURLを開くための関数およびクラスのurllib2モジュール（L11, \cite{urllib}）、csv形式（データをカンマで区切ったもの）のデータを扱うことができるcsvモジュール（L12）を読み込む。またscratch\_block（付録\ref{sbprog}）を同様に読み込む。このデータファイルはScratchに登場するブロックを辞書型にしたデータファイルscratch\_block.py(\ref{sbprog})であり、キーがブロックの名前、その値は初期値0を指定したものである。最後にcos類似度の計算を行うSimCalculator（付録\ref{scprog}）を読み込む。
 \\
 次に比較するプログラムURLのリスト化したものを読み込む。L31ではバイナリーモードで開いたファイルオブジェクトを変数dataReaderと置く。ファイルを開く際には組み込み関数open()を使用する。(\cite{open}) open()とは開いたファイルをファイルオブジェクトを返す。その際にmodeを２つ目の引数で指定でき、本プログラムでは読み込み専用、バイナリーモードを指定している。このファイルはL141以降のfor文内で改め呼び出す。
 \begin{table}[h]
@@ -376,9 +397,9 @@ https://scratch.mit.edu/projects/102933941/ \\
 \end{center}
 \end{table}
 \\
-メソッドgetFirstでは読み込んだプロジェクトで使用されているブロックごとの個数を数え、ソースコード\ref{sbprog}の値の上書きを行う。（L39）ブロックの総個数を変数countと置く。L41のif文では組み込み関数isinstance()を使用しリストであるかを確認する。(\cite{isinstance}) 組み込み関数のisinstance()とは２つの引数を指定し、１つ目が２つ目のインスタンスであるかどうかを返す。また読み込んだデータリストLが長さ0より大きいリストであれば最初の値を変数firstと置く。L43のif文では同様にisinstance()を使用しリストのキーがUnicode文字列であれば処理を進める。Unicode文字列はバイト単位である通常の文字列に対して、文字型に構わず１文字を１文字として扱う。(\cite{unicode}) if文内では始めに対象データ内の例外処理を行う。ソースコード\ref{sbprog}に記録されているブロック名に一致するように"turnRight:"、"turnLeft:"、"wait:elapsed:from:"の値より末尾のセミコロンを覗く。その際組み込み型のrstripを利用する。rstripはstr.rstripの引数で指定した文字もしくは文字集合を文字列の末尾から覗く。(\cite{rstrip}) L54ではdict内(\cite{sbprog}内の辞書）にfirstと一致するものがあればdictの値を１つ増やす。同時にcountを１つ増やす。L57ではデータリスト内の値をgetFirstの引数に繰り返し置くことで再帰メソッドにする。
+メソッドgetFirstでは読み込んだプロジェクトで使用されているブロックごとの個数を数え、scratchblock.py（付録\ref{sbprog}）の値の上書きを行う。（L39）ブロックの総個数を変数countと置く。L41のif文では組み込み関数isinstance()を使用しリストであるかを確認する。(\cite{isinstance}) 組み込み関数のisinstance()とは２つの引数を指定し、１つ目が２つ目のインスタンスであるかどうかを返す。また読み込んだデータリストLが長さ0より大きいリストであれば最初の値を変数firstと置く。L43のif文では同様にisinstance()を使用しリストのキーがUnicode文字列であれば処理を進める。Unicode文字列はバイト単位である通常の文字列に対して、文字型に構わず１文字を１文字として扱う。(\cite{unicode}) if文内では始めに対象データ内の例外処理を行う。ソースコード\ref{sbprog}に記録されているブロック名に一致するように"turnRight:"、"turnLeft:"、"wait:elapsed:from:"の値より末尾のセミコロンを覗く。その際組み込み型のrstripを利用する。rstripはstr.rstripの引数で指定した文字もしくは文字集合を文字列の末尾から覗く。(\cite{rstrip}) L54ではdict内(scratchblock.py内の辞書）にfirstと一致するものがあればdictの値を１つ増やす。同時にcountを１つ増やす。L57ではデータリスト内の値をgetFirstの引数に繰り返し置くことで再帰メソッドにする。
 \\
-次にurllib2モジュールを使用し、Scratchプロジェクトを呼び出す。変数r1でurlを開き、r1.read()でファイルを読み出したものをjson.loadsを使用しjson型のデータをpythonオブジェクトへの脱直列化する。(\cite{loads})  root1より"children"を親とするリスト(y1)を取り出す。L77では取り出したリストy1の長さ分のfor文を作成する。事前に"scripts"を変数aとし（L70）、もしaが含まれていれば、使用されているブロックをL71で定義したリストs1に加える。s1はL99でgetFirstの引数に指定する。L98でソースコード\ref{sbprog}のキーであるblockをxと置く。次にcos類似度の計算をするためのベクターを作る。L106ではxをソートし、xxと置く。初期化したリスト（xxx）にはfor文でキーの値を取得し、書き込んでいく。
+次にurllib2モジュールを使用し、Scratchプロジェクトを呼び出す。変数r1でurlを開き、r1.read()でファイルを読み出したものをjson.loadsを使用しjson型のデータをpythonオブジェクトへの脱直列化する。(\cite{loads})  root1より"children"を親とするリスト(y1)を取り出す。L77では取り出したリストy1の長さ分のfor文を作成する。事前に"scripts"を変数aとし（L70）、もしaが含まれていれば、使用されているブロックをL71で定義したリストs1に加える。s1はL99でgetFirstの引数に指定する。L98でソースコードscratchblock.pyのキーであるblockをxと置く。次にcos類似度の計算をするためのベクターを作る。L106ではxをソートし、xxと置く。初期化したリスト（xxx）にはfor文でキーの値を取得し、書き込んでいく。
 \\
 次にスプライト数を数える。L86ではスプライト数を数える変数splite\_count1を初期化する。L77のfor文と同様にリストの長さ分、"objName"を持つリストを探し存在すればsplite\_count1の数を１増やす。
 \\
@@ -414,9 +435,6 @@ block & splite & cos \\
 \end{tabular}
 \end{center}
 \end{table}
-
-
-%cos類似度を計算したいjsonプログラムをそれぞれA,Bとすると、A,Bの読み込みを行うとき、プログラムIDを設定することでネット上からプログラムを自動で呼び出せるようにした。プログラムAの中のブロック情報が書かれているchildrenの部分のみを取り出し(y1)、スプライトの数分足していくことで集計を行いたプログラム部分を一つの変数にまとめた(s1)。ここでスプライトの合計もカウントしている。これらの作業を行なった後、s1とブロックの辞書を呼び出した変数(x)を引数とし、getFirstを呼び出した。集計を行なった後、ソートを行い、ベクター表示させた(xxx)。プログラムBでも同じ動作を行う。ただし、上書きされた辞書を初期値の0に戻す作業を行なっている。それぞれのプログラムでベクター表示できたら、cos類似度を実際計算するSimCalculator.py\ref{scprog}を呼び出している。プログラムの最初と最後には、プログラムIDのデータファイルであるCSVファイルを開き、結果を出力するファイルを作成する動作が書かれている。
 
 
 \part{結果と評価}
@@ -706,9 +724,6 @@ block & splite & cos \\
 \subsection{Maze Gameの評価}
 \subsubsection{ブロック数、スプライト数とcos類似度の比較}
 　ブロック数・スプライト数どちらのグラフも段数に限らずばらつきが見られ、一回のリミックスだけで元プロジェクトに比べて改良されているプロジェクトも複数あることが分かった。全体的に大規模なリミックスツリーと同じような傾向が見られたが、プロジェクトの量が少ないため、類似度がかなり低いプロジェクトはあまり見られなかった。
-%この可視化がツール上に加わることで、それぞれの生徒がどの程度自分のアイデアでプロジェクトを作成できているか、もしくはできていないのかという新たな情報を提供でき、教育者として個々の生徒の進度を把握する一つの手助けになるのではないかと考えている。
-
-%ブロック数とcos類似度のグラフ、スプライト数とcos類似度のグラフの表の中で、どの段においても最も似ているもの・最も離れているものはどれも共通したプロジェクトが得られたが、中間にあたるプロジェクトがどの段においても異なるという結果となった。これは、類似性を表す上で使用したブロック数とスプライト数の2つの要素によって、中間と位置付けるプロジェクトが異なったということである。本研究では2要素ごとに可視化を行ったため、このような誤差が出てしまったが、今後3次元で可視化を試みることで、改善できるのではないかと考えている。
 
 \begin{table}[h]
  \scriptsize

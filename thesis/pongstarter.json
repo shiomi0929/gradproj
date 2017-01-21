@@ -1,0 +1,136 @@
+{
+	"objName": "Background",
+	"sounds": [{
+			"soundName": "pop",
+			"soundID": 1,
+			"md5": "83a9787d4cb6f3b7632b4ddfebf74367.wav",
+			"sampleCount": 258,
+			"rate": 11025,
+			"format": ""
+		}],
+	"costumes": [{
+			"costumeName": "red bottom",
+			"baseLayerID": 5,
+			"baseLayerMD5": "ed2a21e360613afb8be9b67ec6f1d94e.png",
+			"bitmapResolution": 2,
+			"rotationCenterX": 480,
+			"rotationCenterY": 360
+		},
+		{
+			"costumeName": "neon tunnel2",
+			"baseLayerID": 6,
+			"baseLayerMD5": "ccb037625fc652564047d04c7ddb42c6.svg",
+			"bitmapResolution": 1,
+			"rotationCenterX": 240,
+			"rotationCenterY": 180
+		}],
+	"currentCostumeIndex": 1,
+	"penLayerMD5": "5c81a336fab8be57adc039a8a2b33ca9.png",
+	"penLayerID": 0,
+	"tempoBPM": 100,
+	"videoAlpha": 0.5,
+	"children": [{
+			"objName": "paddle",
+			"scripts": [[20, 20, [["whenGreenFlag"], ["doForever", [["xpos:", ["mouseX"]]]]]],
+				[123, 147, [["gotoSpriteOrMouse:", "_mouse_"]]]],
+			"costumes": [{
+					"costumeName": "cloak1-b",
+					"baseLayerID": 1,
+					"baseLayerMD5": "31e4956a605bbfe071b8404ea9fe9962.png",
+					"bitmapResolution": 2,
+					"rotationCenterX": 92,
+					"rotationCenterY": -326
+				},
+				{
+					"costumeName": "paddle",
+					"baseLayerID": 2,
+					"baseLayerMD5": "5cda5ed5ffabc3d06322551656427b06.svg",
+					"bitmapResolution": 1,
+					"rotationCenterX": 42,
+					"rotationCenterY": 6
+				}],
+			"currentCostumeIndex": 1,
+			"scratchX": 218,
+			"scratchY": -143,
+			"scale": 0.85000000000001,
+			"direction": 90,
+			"rotationStyle": "normal",
+			"isDraggable": false,
+			"indexInLibrary": 2,
+			"visible": true,
+			"spriteInfo": {
+			}
+		},
+		{
+			"objName": "ball",
+			"scripts": [[30,
+					25,
+					[["whenGreenFlag"],
+						["gotoX:y:", 20, 160],
+						["doForever", [["bounceOffEdge"], ["forward:", 15]]]]],
+				[96,
+					199,
+					[["whenGreenFlag"],
+						["doForever",
+							[["doIf",
+									["touching:", "paddle"],
+									[["playSound:", "water_drop"],
+										["turnRight:", ["randomFrom:to:", 160, 200]],
+										["forward:", 15],
+										["wait:elapsed:from:", 0.5]]],
+								["doIf", ["touchingColor:", -65536], [["stopScripts", "all"]]]]]]],
+				[349, 104, [["heading:", 45]]]],
+			"sounds": [{
+					"soundName": "water_drop",
+					"soundID": 0,
+					"md5": "3e18cdc8d21c501d9c5d14576ff0fc86.wav",
+					"sampleCount": 12160,
+					"rate": 22050,
+					"format": "adpcm"
+				}],
+			"costumes": [{
+					"costumeName": "ball-b",
+					"baseLayerID": 3,
+					"baseLayerMD5": "6e6330cad7750ea7e9dc88402661deb8.svg",
+					"bitmapResolution": 1,
+					"rotationCenterX": 22,
+					"rotationCenterY": 22
+				},
+				{
+					"costumeName": "ball-a",
+					"baseLayerID": 4,
+					"baseLayerMD5": "10117ddaefa98d819f2b1df93805622f.svg",
+					"bitmapResolution": 1,
+					"rotationCenterX": 22,
+					"rotationCenterY": 22
+				}],
+			"currentCostumeIndex": 1,
+			"scratchX": 156.87562582483716,
+			"scratchY": 116.70320034798698,
+			"scale": 1.00000000000001,
+			"direction": 63.194428907734846,
+			"rotationStyle": "none",
+			"isDraggable": false,
+			"indexInLibrary": 1,
+			"visible": true,
+			"spriteInfo": {
+			}
+		}],
+	"info": {
+		"author": "",
+		"userAgent": "Mozilla\/5.0 (Macintosh; Intel Mac OS X 10_10_5) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/55.0.2883.95 Safari\/537.36",
+		"history": "2007-5-1 23:05:59\tsave\tpong test\tjay\tjay\r2007-5-1 23:55:55\tsave\tpong test with world\tjay\tjay\r2007-5-2 17:22:48\tsave\tpong Simple\tjay\tjay\r2007-5-2 17:26:24\tsave\tpong Simple\tjay\tjay\r2007-5-2 17:27:12\tsave\tpong Simple\tjay\tjay\r2007-5-2 17:27:36\tsave\tpong Simple\tjay\tjay\r2007-5-2 17:34:39\tsave\tpong Simple\tjay\tjay\r2007-5-2 17:35:16\tsave\tpong Simple\tjay\tjay\r2007-5-2 19:27:31\tsave\tpong Simple\tjay\tjAy sIlvEr\r2007-5-2 19:35:10\tsave\tpong Simple\tjay\tjAy sIlvEr\r2007-5-3 15:20:08\tsave\t2 Pong e\tjay\tjay\r2007-10-28 16:20:10\tsave\t2 PongER\t\t\r2007-11-29 16:05:40\tsave\t2 Pong\t\t\r2007-11-29 16:06:26\tsave\t2 Pong\t\t\r2007-11-29 16:06:39\tsave\t2 Pong\t\t\r2007-12-5 14:51:40\tshare\t2 Pong\tSampleProjectsTeam\tXimena\r2012-2-7 09:42:38\tsave\tPong Revised Feb 2012\t\t\r2012-2-7 09:58:08\tsave\tPong Revised Feb 2012\t\t\r2012-2-7 10:06:36\tsave\tPong Revised Feb 2012\t\t\r2012-2-7 10:11:13\tsave\tPong Variable Revised Feb 2012\t\t\r2012-2-7 10:22:04\tsave\tPong Variable Revised Feb 2012\t\t\r2012-2-7 10:32:29\tsave\tPong Variable Revised Feb 2012\t\t\r2012-2-7 11:51:40\tsave\tPong Variable Revised Feb 2012\t\t\r2012-2-7 12:06:13\tsave\tPong Variable Revised Feb 2012\t\t\r2012-2-7 12:06:18\tsave\tPong Variable Revised Feb 2012\t\t\r",
+		"videoOn": false,
+		"scratch-version": "1.4 of 30-Jun-09",
+		"projectID": "10000036",
+		"language": "en",
+		"scriptCount": 3,
+		"platform": "Mac OS",
+		"spriteCount": 2,
+		"os-version": "1068",
+		"comment": "A simple pong game\r\rINSTRUCTIONS\r*Move mouse to control paddle\r*Don't let the ball fall into the lava\r\rHOW I MADE THIS\r*The paddle just moves it's X coordinate to whatever the mouse's X coordinate is\r*I drew the ball using the gradient effect in the paint editor\r*The trickiest thing for me was to get the ball to bounce off the paddle right. I ended up going on the website and finding how someone else had done it: \"point in direction (180 - direction)\".  I still find this confusing but it works really well. Then I turn a random amount to make it more interesting.\r\rMORE IDEAS\rMake the game more complex or change images.\r",
+		"hasCloudData": false,
+		"swfVersion": "v453.1",
+		"flashVersion": "MAC 24,0,0,194"
+	}
+}

@@ -1,0 +1,157 @@
+{
+	"objName": "Stage",
+	"variables": [{
+			"name": "クローン数",
+			"value": 40,
+			"isPersistent": false
+		},
+		{
+			"name": "消えた数",
+			"value": 73,
+			"isPersistent": false
+		}],
+	"scripts": [[81.95, 179, [["whenIReceive", "消えた数"], ["changeVar:by:", "消えた数", 1]]],
+		[44.6, 71.5, [["whenGreenFlag"], ["setVar:to:", "消えた数", 0]]]],
+	"sounds": [{
+			"soundName": "pop",
+			"soundID": 1,
+			"md5": "83a9787d4cb6f3b7632b4ddfebf74367.wav",
+			"sampleCount": 258,
+			"rate": 11025,
+			"format": ""
+		}],
+	"costumes": [{
+			"costumeName": "backdrop1",
+			"baseLayerID": 5,
+			"baseLayerMD5": "b61b1077b0ea1931abee9dbbfa7903ff.png",
+			"bitmapResolution": 2,
+			"rotationCenterX": 480,
+			"rotationCenterY": 360
+		}],
+	"currentCostumeIndex": 0,
+	"penLayerMD5": "5c81a336fab8be57adc039a8a2b33ca9.png",
+	"penLayerID": 0,
+	"tempoBPM": 60,
+	"videoAlpha": 0.5,
+	"children": [{
+			"objName": "Sprite1",
+			"scripts": [[10,
+					10,
+					[["whenGreenFlag"],
+						["gotoX:y:", 0, 0],
+						["heading:", 90],
+						["setSizeTo:", 0],
+						["hide"],
+						["setVar:to:", "クローン数", 0],
+						["doForever", [["createCloneOf", "_myself_"], ["turnRight:", 31], ["wait:elapsed:from:", 0.1]]]]],
+				[215,
+					10,
+					[["whenCloned"],
+						["changeVar:by:", "クローン数", 1],
+						["goBackByLayers:", 50],
+						["show"],
+						["doUntil", ["touching:", "_edge_"], [["call", "動かす"], ["call", "動かす2"]]],
+						["doRepeat", 10, [["call", "動かす2"], ["call", "動かす2"]]],
+						["changeVar:by:", "クローン数", -1],
+						["broadcast:", "消えた数"],
+						["deleteClone"]]],
+				[36.4,
+					289.75,
+					[["procDef", "動かす", [], [], false], ["nextCostume"], ["wait:elapsed:from:", 0.1]]],
+				[80.4,
+					401.55,
+					[["procDef", "動かす2", [], [], false],
+						["changeGraphicEffect:by:", "color", ["randomFrom:to:", 1, 5]],
+						["changeSizeBy:", 2],
+						["forward:", 5]]]],
+			"sounds": [{
+					"soundName": "meow",
+					"soundID": 0,
+					"md5": "83c36d806dc92327b9e7049a565c6bff.wav",
+					"sampleCount": 18688,
+					"rate": 22050,
+					"format": ""
+				}],
+			"costumes": [{
+					"costumeName": "costume1",
+					"baseLayerID": 1,
+					"baseLayerMD5": "09dc888b0b7df19f70d81588ae73420e.svg",
+					"bitmapResolution": 1,
+					"rotationCenterX": 47,
+					"rotationCenterY": 55
+				},
+				{
+					"costumeName": "costume2",
+					"baseLayerID": 2,
+					"baseLayerMD5": "3696356a03a8d938318876a593572843.svg",
+					"bitmapResolution": 1,
+					"rotationCenterX": 47,
+					"rotationCenterY": 55
+				},
+				{
+					"costumeName": "cat1 flying-a",
+					"baseLayerID": 3,
+					"baseLayerMD5": "1e81725d2d2c7de4a2dd4a145198a43c.svg",
+					"bitmapResolution": 1,
+					"rotationCenterX": 67,
+					"rotationCenterY": 48
+				},
+				{
+					"costumeName": "cat1 flying-b",
+					"baseLayerID": 4,
+					"baseLayerMD5": "0d192725870ef0eda50d91cab0e3c9c5.svg",
+					"bitmapResolution": 1,
+					"rotationCenterX": 42,
+					"rotationCenterY": 44
+				}],
+			"currentCostumeIndex": 3,
+			"scratchX": 0,
+			"scratchY": 0,
+			"scale": 0.056179775280898875,
+			"direction": 29,
+			"rotationStyle": "normal",
+			"isDraggable": false,
+			"indexInLibrary": 1,
+			"visible": false,
+			"spriteInfo": {
+			}
+		},
+		{
+			"target": "Stage",
+			"cmd": "getVar:",
+			"param": "クローン数",
+			"color": 15629590,
+			"label": "クローン数",
+			"mode": 1,
+			"sliderMin": 0,
+			"sliderMax": 100,
+			"isDiscrete": true,
+			"x": 5,
+			"y": 5,
+			"visible": true
+		},
+		{
+			"target": "Stage",
+			"cmd": "getVar:",
+			"param": "消えた数",
+			"color": 15629590,
+			"label": "消えた数",
+			"mode": 1,
+			"sliderMin": 0,
+			"sliderMax": 100,
+			"isDiscrete": true,
+			"x": 5,
+			"y": 32,
+			"visible": true
+		}],
+	"info": {
+		"userAgent": "Mozilla\/5.0 (Macintosh; Intel Mac OS X 10_10_5) AppleWebKit\/601.2.7 (KHTML, like Gecko) Version\/9.0.1 Safari\/601.2.7",
+		"videoOn": false,
+		"scriptCount": 6,
+		"flashVersion": "MAC 22,0,0,192",
+		"hasCloudData": false,
+		"swfVersion": "v449",
+		"spriteCount": 1,
+		"projectID": "119400429"
+	}
+}

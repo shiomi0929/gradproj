@@ -9,13 +9,11 @@ def open_with_pandas(filename):
     data = df.values
     return data
 
-Z = open_with_pandas('cross_1_block_nl.csv')
-
+Z = open_with_pandas('cross_3_block_nl.csv')
 
 X, Y = meshgrid(x,y)
-colorlist = pcolor(X, Y, Z, cmap='Blues')
-
-colorbar(mappable=colorlist)
+pcolor(X, Y, Z)
+colorbar()
 
 show()
 
